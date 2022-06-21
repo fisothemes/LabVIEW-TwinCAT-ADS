@@ -35,7 +35,8 @@ These are the VIs included in the API
 
 * **Write and Read Fast**
 
-If you need sub 100ms read/write speeds you will need to used the Write Fast and Read Fast VIs. 
+The general Read/Write shound easily do sub-100ms operationson primitive types and small combound types. However, if you need sub-100ms read/write on may symobols (~300+) at once, you will need to used the Write Fast and Read Fast VIs.
+
 However these come with caveats.
 
 1. All Strings must have a size of 256 byte e.g. `STRING(255)` or `T_MaxString` 
@@ -46,7 +47,8 @@ However these come with caveats.
 
 * **Invoking Methods**
 
-Current Invoking methods only supports primitive types and arrays of primitive types. Will look into STRUCT support after I finish adding events...speaking of events!
+The `Invoking Method` VI only supports primitive types and arrays of primitive types.
+To send STRUCTS as arguments please use the `Invoke Method Extended` VI. This VI applies the same rules as the `Write Fast` and `Read Fast`
 
 * **Events**
 
