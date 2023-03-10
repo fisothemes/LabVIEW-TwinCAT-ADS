@@ -63,23 +63,10 @@ VIs included in the API:
         fVar  : LREAL;
     END_STRUCT
     END_TYPE
-    ``` 
-
+    ```
     Subsequent calls resulted in read/write/method invoke times of 1-2ms for `ARRAY[0..999] OF LREAL` and ~6ms for `ARRAY[0..99] OF ST_STRUCT`.
 
-3. Enums must include the type in their definition.
-    You include a type to an enum like so:
-    ```Pascal
-    TYPE E_OPERATION :
-    (
-        Array_Sum 	:= 0,
-        Array_Product
-    )UDINT;
-    END_TYPE
-    ```
-    Notice there is a type of `UDINT` end of the definition. This corresponds to `Enum U32` on LabVIEW. Not including a type may result in undefined behavior. LabVIEW uses `Enum U16` by default which is a `UINT`. Do what you may with that knowledge.
-
-4. Besides enums, when sending numbers, arrays of numbers or structs with numbers, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain. There are no aliases in LabVIEW. 
+3. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain. There are no aliases in LabVIEW. 
 
 
 * **Events**
