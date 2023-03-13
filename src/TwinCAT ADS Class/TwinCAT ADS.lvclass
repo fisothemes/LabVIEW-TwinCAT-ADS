@@ -1164,5 +1164,4 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 		</Item>
 	</Item>
-	<Item Name="VIs" Type="Folder"/>
 </LVClass>
