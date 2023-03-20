@@ -21,7 +21,7 @@ Note:
 
 New Features:
 -------------
-Symbols auto-update when you Login with download, Restart TwinCAT System or Activate TwinCAT whilst connected on the LabVIEW side. Online Change, however, is still not supported.
++ Symbols auto-update when you Login with download, Restart TwinCAT System or Activate TwinCAT whilst connected on the LabVIEW side. Online Change, however, is still not supported.
 + Events
     -  Read symbols with events.
     -  ADS state events.
