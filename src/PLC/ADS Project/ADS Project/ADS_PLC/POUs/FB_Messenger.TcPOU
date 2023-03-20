@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Messenger" Id="{0b3bada7-ec5d-4f4b-8471-76143af8631b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Messenger
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Send" Id="{e0ce973a-a0de-43db-a81c-34c15d492236}">
+      <Declaration><![CDATA[{attribute 'TcRpcEnable'}
+METHOD Send : LREAL
+VAR_INPUT
+	stMessage_Info 	: ST_MESSAGE_INFO;
+	arfData 		: ARRAY[0..2] OF LREAL;
+END_VAR
+VAR_OUTPUT
+	sReturn_Message : WSTRING;
+	bSuccess 		: BOOL; 
+END_VAR
+VAR_INST 
+	stMessage_Info_Copy : ST_MESSAGE_INFO;
+	arfData_Copy : ARRAY[0..2] OF LREAL;
+END_VAR
+VAR 
+	i : DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[stMessage_Info_Copy := stMessage_Info;
+arfData_Copy 		:= arfData;
+
+CASE stMessage_Info.eOperation OF
+	E_OPERATION.Array_Sum:
+		FOR i := 0 TO SIZEOF(arfDATA)/SIZEOF(arfData[0])-1 DO
+			Send := Send + arfData[i];
+			END_FOR
+	E_OPERATION.Array_Product:
+		Send := arfData[0];
+		FOR i := 1 TO SIZEOF(arfDATA)/SIZEOF(arfData[0])-1 DO
+			Send := Send * arfData[i];
+			END_FOR
+END_CASE
+
+sReturn_Message := "I have finished!";
+bSuccess 		:= TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Messenger">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Messenger.Send">
+      <LineId Id="13" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="32" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

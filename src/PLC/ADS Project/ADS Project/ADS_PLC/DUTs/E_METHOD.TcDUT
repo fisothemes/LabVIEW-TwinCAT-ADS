@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="E_METHOD" Id="{daeaedf7-71a5-4b85-8ffa-c307d0d46765}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_METHOD :
+(
+	GET := 0,
+	HEAD,
+	POST,
+	PUT,
+	DELETE,
+	CONNECT,
+	OPTIONS
+)UINT;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -11,11 +11,14 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Examples" Type="Folder">
+			<Item Name="Connection Events.vi" Type="VI" URL="../Examples/Connection Events.vi"/>
+			<Item Name="Event Read Symbol.vi" Type="VI" URL="../Examples/Event Read Symbol.vi"/>
 			<Item Name="Get Connection Information.vi" Type="VI" URL="../Examples/Get Connection Information.vi"/>
 			<Item Name="Get Device Information.vi" Type="VI" URL="../Examples/Get Device Information.vi"/>
 			<Item Name="Invoke Method.vi" Type="VI" URL="../Examples/Invoke Method.vi"/>
 			<Item Name="Read From Symbol.vi" Type="VI" URL="../Examples/Read From Symbol.vi"/>
 			<Item Name="Read Write ADS State.vi" Type="VI" URL="../Examples/Read Write ADS State.vi"/>
+			<Item Name="Reconnect and Disconnect.vi" Type="VI" URL="../Examples/Reconnect and Disconnect.vi"/>
 			<Item Name="Write To Symbol.vi" Type="VI" URL="../Examples/Write To Symbol.vi"/>
 		</Item>
 		<Item Name="Showcase" Type="Folder">
@@ -58,6 +61,7 @@
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
 				<Item Name="To .NET Object.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/dotnet.llb/To .NET Object.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="usereventprio.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/usereventprio.ctl"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="mscorlib" Type="VI" URL="mscorlib">

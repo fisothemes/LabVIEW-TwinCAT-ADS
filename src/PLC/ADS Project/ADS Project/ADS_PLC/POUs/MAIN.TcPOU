@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{ef0ca126-29ac-4ca2-946e-77fc5278adf9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbMessanger 				: FB_Messenger;
+	arstHTTP_Messages_In 	: ARRAY[0..2] OF ST_HTTP_MESSAGE;
+	arstHTTP_Messages_Out 	: ARRAY[0..2] OF ST_HTTP_MESSAGE;
+END_VAR
+VAR CONSTANT
+	arstRequest_Line : ARRAY[0..2] OF ST_REQUEST_LINE :=
+									[ 
+										( eMethod := E_METHOD.GET, sURI := '/brands/toyota.html', sProtocol := 'HTTP/1.1'),
+										( eMethod := E_METHOD.GET, sURI := '/brands/suzuki.html', sProtocol := 'HTTP/1.1'),
+										( eMethod := E_METHOD.GET, sURI := '/_/mss/boq-one-google/_/js', sProtocol := 'HTTP/1.1')
+									];
+	arstHeader_Fields : ARRAY[0..2] OF ST_HEADER_FIELDS := 
+									[
+										(sHost := 'www.cars.com', sAccept := 'text/html text/plain image/gif image/jpeg', sAccept_Language := 'en-GB', sAccept_Encoding := 'gzip, deflate', sUser_Agent := 'Safari/537.36'),
+										(sHost := 'www.cars.com', sAccept := 'text/html text/plain image/gif image/jpeg', sAccept_Language := 'en-US,en;q=0.9', sAccept_Encoding := 'gzip, deflate', sUser_Agent := 'Chrome/102.0.5005.124'),
+										(sHost := 'www.gstatic.com', sAccept := '*/*', sAccept_Language := 'en-US,en;q=0.9', sAccept_Encoding := 'gzip, deflate, br', sUser_Agent := 'Mozilla/5.0')
+									];
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[arstHTTP_Messages_Out[0].stRequest_Line := arstRequest_Line[0];
+arstHTTP_Messages_Out[0].stHeader_Fields := arstHeader_Fields[0];
+
+arstHTTP_Messages_Out[1].stRequest_Line := arstRequest_Line[1];
+arstHTTP_Messages_Out[1].stHeader_Fields := arstHeader_Fields[1];
+
+arstHTTP_Messages_Out[2].stRequest_Line := arstRequest_Line[2];
+arstHTTP_Messages_Out[2].stHeader_Fields := arstHeader_Fields[2];]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="32" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

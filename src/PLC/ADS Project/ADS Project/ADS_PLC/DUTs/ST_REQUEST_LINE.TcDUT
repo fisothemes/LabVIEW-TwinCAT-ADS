@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="ST_REQUEST_LINE" Id="{0a605d18-87c3-423a-9448-4dc14424ea79}">
+    <Declaration><![CDATA[TYPE ST_REQUEST_LINE :
+STRUCT
+	eMethod 	: E_METHOD;
+	sURI 		: T_MaxString;
+	sProtocol 	: T_MaxString;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>
