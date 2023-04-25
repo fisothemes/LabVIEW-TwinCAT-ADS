@@ -15,6 +15,7 @@
 			<Item Name="Event Read Symbol.vi" Type="VI" URL="../Examples/Event Read Symbol.vi"/>
 			<Item Name="Get Connection Information.vi" Type="VI" URL="../Examples/Get Connection Information.vi"/>
 			<Item Name="Get Device Information.vi" Type="VI" URL="../Examples/Get Device Information.vi"/>
+			<Item Name="High Speed Reading.vi" Type="VI" URL="../Examples/High Speed Reading.vi"/>
 			<Item Name="Invoke Method.vi" Type="VI" URL="../Examples/Invoke Method.vi"/>
 			<Item Name="Read From Symbol.vi" Type="VI" URL="../Examples/Read From Symbol.vi"/>
 			<Item Name="Read Write ADS State.vi" Type="VI" URL="../Examples/Read Write ADS State.vi"/>

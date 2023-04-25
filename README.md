@@ -12,35 +12,14 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 
 
 # Changelog
-Note:
------
-+ Disconnect no longer disposes of resources. 
-+ Please use the Dispose VI after you you are done.
-+ No need to use Disconnect before Dispose. Dispose of will disconnect for you.
-+ When using Extensions do not close references without an asterisk(*),  those references are used internally. They're managed for you.
 
 New Features:
 -------------
-+ Symbols auto-update when you Login with download, Restart TwinCAT System or Activate TwinCAT whilst connected on the LabVIEW side. Online Change, however, is still not supported.
-+ Events
-    -  Read symbols with events.
-    -  ADS state events.
-    -  Connection state change events.
-    -  AMS router change event.
-    -  Symbol Version change event.
-
-Improvements:
-----------------
-+ No need to match the array size with Beckhoff array size to write
-+ Improved reading and writing speeds of Time and Date types, strings, wstrings.
-+ Improved reading and writing speeds of large structs and arrays of large structs.
-+ Improved naming of terminals controls of indicators.
-
-Fixes:
-------
-+ Showcase.vi no longer stops you from compiling code executable
-+ Fixed memory leak, caches .NET AdsDataTypeInfo were not closed on disconnect/disposal
-+ Invoke method handles now deleted disconnect/disposal.
++ Added new VIs
+    -  Read All Namespaces
+    -  Read as Byte Stream
+    -  Write as Byte Stream
+    -  High-Speed Reading Example
 
 # Showcase
 VIs included in the API:
@@ -59,14 +38,14 @@ Invoke Method:
 
 ![TwinCAT XAE Shell Online](./assets/images/invoke%20method.vi-tcxaeshell-online.png)
 
-Read using Events:
+Event-Driven Reading:
 -
 
 ![Block Diagram](./assets/images/event%20read.vi-block-diagram.png)
 
 ![Front Panel](./assets/images/event-read.vi-front-panel.png)
 
-Writing to Symbol:
+Write Symbol:
 -
 
 ![Block Diagram](./assets/images/write%20to%20symbol.vi-block-diagram.png)
@@ -75,13 +54,18 @@ Writing to Symbol:
 
 ![TwinCAT XAE Shell](./assets/images/write%20to%20symbol.vi-tcxaeshell.png)
 
-Reading from Symbol:
+Read Symbol:
 -
 ![Front Panel](./assets/images/read%20from%20symbol.vi-front-panel.png)
 
 ![Block Diagram](./assets/images/read%20from%20symbol.vi-block-diagram.png)
 
 ![TwinCAT XAE Shell](./assets/images/write%20from%20symbol.vi-tcxaeshell.png)
+
+High-Speed Reading:
+-
+![Block Diagram](./assets/images/high-speed%20reading.vi-block-diagram.png)
+![Front Panel](./assets/images/high-speed%20reading.vi-front-panel.png)
 
 
 # Developer Notes
@@ -93,7 +77,7 @@ Connection
 1. You may notice that the `Connect.vi` is slow in connection. This is normal.
     The VI is simply caching the symbols and types in LabVIEW rather than keeping them in a .NET collection. The reason for this is that lookup times on the .NET Ads-XYZ-Collection are very slow. The further I moved away from making calls to any of Beckhoff's .NET libraries the faster operations became. The penalty for doing this is a slow connection.
 
-2. Because of the caching system, online changes are currently not supported. I have a workaround in mind but that currently requires me to implement callbacks and events. I have them working on my private repo but I am currently not happy with the implementation.
+2. Because of the caching system, online changes are currently not supported.
 
 3. You do not need to disconnect before disposal. `Dispose.vi` VI will disconnect for you.
 
@@ -130,6 +114,9 @@ Events
 
 2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disconnect.
 
+Other
+------
+1. When using extensions. Please only close the .NET references with an asterisk (*) on their label at the connector pane. The ones without an * are managed for you.
 
 **Please feel free to contribute to the project or report bugs**
 - - - -
