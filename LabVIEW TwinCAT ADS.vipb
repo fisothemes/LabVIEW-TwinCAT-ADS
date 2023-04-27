@@ -1,10 +1,10 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-04-25 04:48:42" Creator="MzumaG01" Comments="" ID="d8046f786cb7a1af301910e26b4616f6">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-04-27 04:16:46" Creator="MzumaG01" Comments="" ID="ad4d1e888e7dae89438589c726935a08">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.0.0.3</Library_Version>
+    <Library_Version>1.0.0.4</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
-    <Library_Output_Folder>builds\1.0.0.2</Library_Output_Folder>
+    <Library_Output_Folder>builds\1.0.0.3</Library_Output_Folder>
     <Company_Name>FisoThemes</Company_Name>
     <Library_Summary/>
     <Library_License>MIT</Library_License>
@@ -39,11 +39,12 @@
       <URL>https://github.com/fisothemes</URL>
       <Release_Notes>New Features:
 ---------------
-+ Added new VIs
-- -  Read All Namespaces
-- -  Read as Byte Stream
-- -  Write as Byte Stream
-- -  High-Speed Reading Example</Release_Notes>
++ Can now read and write Function Blocks
+-- NOTE: These are read/written as clusters
+
+Fixes:
+------
++ Couldn't read Aliases that are structs</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -578,7 +579,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Data\Read.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C6ABE6B5E18DE630A32FFDE1836AE93F</GUID>
+      <GUID>ECD32FBDA9A2072233F27E12555F3BA7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -739,7 +740,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F5D6A7E197BBBA4D39806C1D4267933F</GUID>
+      <GUID>925D0F6A1BE88A67FA8D98E2E5BC6395</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -774,7 +775,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C1AB3B43A751C03A09AE4B734CBD931F</GUID>
+      <GUID>9355FC70ED48CCF34A281A5BAF66F649</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -963,7 +964,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Recursive Child Symbol Reader.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>234103EAB8B3670181305E5DA42D2D54</GUID>
+      <GUID>D1590265A87FEA5F7A2268D006E09B66</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1180,7 +1181,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Status\Read All Namespaces.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>192C61205EF4BDA5B56337F6B23D3109</GUID>
+      <GUID>0AB1D5E80E79FE08175975A350376FB8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1299,7 +1300,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>58460F6D2F92BD8C36FABFAA9BF98F8D</GUID>
+      <GUID>D9611CA9BB93278C4D86E3DE838A1CFA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1460,7 +1461,7 @@
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BF2A15A8021FD03F0FF42F35026CEE3E</GUID>
+      <GUID>48BE69DB0A77997539284C48AA68095D</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1537,7 +1538,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B17732EC0A808E5FDCC5BF857CECAE78</GUID>
+      <GUID>F17BD6ED992EEF3E2B8876D64B03F255</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1600,7 +1601,7 @@
         <Path>src\TwinCAT ADS Class\VIs\Events\Delete Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E5F6FDBCD90EE163C90CB5507E591B46</GUID>
+      <GUID>08C66B43AE9987CCCC39D96101B106B7</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

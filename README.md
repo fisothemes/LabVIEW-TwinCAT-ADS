@@ -15,11 +15,12 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 
 New Features:
 -------------
-+ Added new VIs
-    -  Read All Namespaces
-    -  Read as Byte Stream
-    -  Write as Byte Stream
-    -  High-Speed Reading Example
++ Can now read and write Function Blocks
+    -  NOTE: These are read/written as clusters
+
+Fixes:
+-------------
++ + Couldn't read aliases that are structs
 
 # Showcase
 VIs included in the API:
