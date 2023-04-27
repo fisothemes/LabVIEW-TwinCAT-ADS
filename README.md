@@ -20,7 +20,7 @@ New Features:
 
 Fixes:
 -------------
-+ + Couldn't read aliases that are structs
++ Couldn't read aliases that are structs
 
 # Showcase
 VIs included in the API:
