@@ -1,10 +1,10 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-04-27 04:16:46" Creator="MzumaG01" Comments="" ID="ad4d1e888e7dae89438589c726935a08">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-05-11 02:56:43" Creator="MzumaG01" Comments="" ID="3629b68e71712fcd37170fde44ba61c9">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.0.0.4</Library_Version>
+    <Library_Version>1.0.0.5</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
-    <Library_Output_Folder>builds\1.0.0.3</Library_Output_Folder>
+    <Library_Output_Folder>builds\1.0.0.5</Library_Output_Folder>
     <Company_Name>FisoThemes</Company_Name>
     <Library_Summary/>
     <Library_License>MIT</Library_License>
@@ -28,23 +28,74 @@
     <VI_Package_Configuration_File>LabVIEW TwinCAT ADS.vipc</VI_Package_Configuration_File>
     <Description>
       <One_Line_Description_Summary>Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS</One_Line_Description_Summary>
-      <Description>Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
+      <Description>Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard types, Pointers, References, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
 
-# Minimum Requirements
-* LabVIEW 2018 (32/64 bit) or above
-* .NET Framework 4.6.2 (installed by default with LabVIEW)
-* TwinCAT 3.1.4024.10 and above (haven't tested below 4024.10 might work with lower versions)</Description>
+
+Minimum Requirements
+=================
++ LabVIEW 2018 (32/64 bit) or above
++ .NET Framework 4.6.2 (installed by default with LabVIEW)
++ TwinCAT 3.1.4024.10 and above (haven't tested below 4024.10 might work with lower versions)
+
+
+Important Notes
+============
+Connection
+-------------
+1. You may notice that the `Connect.vi` is slow in connection. This is normal.
+    The VI is simply caching the symbols and types in LabVIEW rather than keeping them in a .NET collection. The reason for this is that lookup times on the .NET Ads-XYZ-Collection are very slow. The further I moved away from making calls to any of Beckhoff's .NET libraries the faster operations became. The penalty for doing this is a slow connection.
+
+2. Because of the caching system, online changes are currently not supported.
+
+3. You do not need to disconnect before disposal. `Dispose.vi` VI will disconnect for you.
+
+Read, Write and Invoke Method
+---------------------------------
+
+1. Operations involving `UNION`s types are not yet supported.
+
+2. To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `pValue^`.
+
+3. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow due to caching. Subsequent calls to  read/write/method invoking operations will be faster.
+
+4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain.
+
+5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with defaults.
+
+Events
+-------
+
+1. Online change is not supported. However, you can update variables on the PLC without needing to disconnect on the LabVIEW side via `Login with Download`, `Restart TwinCAT System` and `Activate TwinCAT Configuration`. All symbols will automatically be reloaded into memory.
+
+ &lt;i&gt;NOTE: Any reads or writes running during this process will produce errors, just ignore these errors until reconnection is complete. They will stop once that happens.&lt;/i&gt;
+
+2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disposal.
+
+Other
+------
+1. When using extensions. Please only close the .NET references with an asterisk (*) on their label at the connector pane. The ones without an asterisk are managed for you.</Description>
       <Copyright/>
       <Packager>Goodwill Mzumala</Packager>
       <URL>https://github.com/fisothemes</URL>
-      <Release_Notes>New Features:
+      <Release_Notes>Notes:
+-------
++ Preparation for VIMP.io release.
++ To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. "pValue^".
++ References are read like normal symbols.
+
+New Features:
 ---------------
-+ Can now read and write Function Blocks
--- NOTE: These are read/written as clusters
++ Support for reading and writing to POINTERs and REFERENCEs.
++ Support for reading and writing FUNCTION BLOCKs as clusters.
++ Added VIs for reading and writing data as bytes.
++ Added VI for reading symbol attributes e.g. {attribute 'answer to everything' := '42'}.
++ Added VI for reading all namespaces.
++ Added high-speed reading example.
 
 Fixes:
 ------
-+ Couldn't read Aliases that are structs</Release_Notes>
++ Fixed the issue in which you couldn't read aliases of `STRUCT`s
++ Fixed .NET reference leaks in the Read Method Information VI</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -579,7 +630,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Data\Read.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>ECD32FBDA9A2072233F27E12555F3BA7</GUID>
+      <GUID>5E2619A7291BA299DA4AA38F3EC16A1E</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -740,7 +791,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>925D0F6A1BE88A67FA8D98E2E5BC6395</GUID>
+      <GUID>54BC5723EDA2845C3A071B6610FCF87C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -775,7 +826,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9355FC70ED48CCF34A281A5BAF66F649</GUID>
+      <GUID>A3CBD09858914FBAF438AE39A07B8743</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -964,7 +1015,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Recursive Child Symbol Reader.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D1590265A87FEA5F7A2268D006E09B66</GUID>
+      <GUID>2A7C45E27389131EB814B448541CFD85</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1181,7 +1232,21 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Status\Read All Namespaces.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>0AB1D5E80E79FE08175975A350376FB8</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Symbol Attribute.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>src\TwinCAT ADS Class\VIs\Status\Read Symbol Attribute.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>5D5BFCC838F4B182F305408C48DC1B5D</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1300,7 +1365,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D9611CA9BB93278C4D86E3DE838A1CFA</GUID>
+      <GUID>EFC5A4CD999A3D1527E004546A943BAA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1461,7 +1526,7 @@ Fixes:
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>48BE69DB0A77997539284C48AA68095D</GUID>
+      <GUID>9FF43EF83BD68121BADDC7BF53A81483</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1538,7 +1603,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F17BD6ED992EEF3E2B8876D64B03F255</GUID>
+      <GUID>F0D5ABD2238AD88C4CD4DF5749B7CAFE</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1601,7 +1666,7 @@ Fixes:
         <Path>src\TwinCAT ADS Class\VIs\Events\Delete Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>08C66B43AE9987CCCC39D96101B106B7</GUID>
+      <GUID>26A4CC1B06E78EEDF5844E356501AD4F</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

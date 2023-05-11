@@ -2,7 +2,7 @@
 
 [![Image](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/badge.svg?metric=installs)](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/) [![Image](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/badge.svg?metric=stars)](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/)
 
-Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
+Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard types, Pointers, References, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
 
 
 # Minimum Requirements
@@ -12,20 +12,30 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 
 
 # Changelog
+Notes:
+------
++ Preparation for VIMP.io release.
++ To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `"pValue^"`.
++ References are read like normal symbols.
 
 New Features:
 -------------
-+ Can now read and write Function Blocks
-    -  NOTE: These are read/written as clusters
++ Support for reading and writing to `POINTER`s and `REFERENCE`s.
++ Support for reading and writing `FUNCTION BLOCK`s as clusters.
++ Added VIs for reading and writing data as bytes.
++ Added VI for reading symbol attributes e.g. `{attribute 'answer to everything' := '42'}`.
++ Added VI for reading all namespaces.
++ Added high-speed reading example.
 
 Fixes:
--------------
-+ Couldn't read aliases that are structs
+------
++ Fixed the issue in which you couldn't read aliases of `STRUCT`s
++ Fixed .NET reference leaks in the `Read Method Information` VI
 
 # Showcase
 VIs included in the API:
 
-![Block Diagram](./assets/images/showcase.PNG)
+![Block Diagram](./assets/images/showcase.png)
 
 # Examples
 Invoke Method:
@@ -63,15 +73,22 @@ Read Symbol:
 
 ![TwinCAT XAE Shell](./assets/images/write%20from%20symbol.vi-tcxaeshell.png)
 
+Pointer Support:
+-
+![Block Diagram](./assets/images/pointer.vi-block-diagram.png)
+
+![Front Panel](./assets/images/pointer.vi-front-panel.png)
+
+![TwinCAT XAE Shell](./assets/images/pointer.vi-tcxaeshell.png)
+
 High-Speed Reading:
 -
 ![Block Diagram](./assets/images/high-speed%20reading.vi-block-diagram.png)
+
 ![Front Panel](./assets/images/high-speed%20reading.vi-front-panel.png)
 
 
 # Developer Notes
-
-
 
 Connection
 ----------
@@ -85,9 +102,11 @@ Connection
 Read, Write and Invoke Method
 ---------------------------------
 
-1. Operations involving `REFERENCE TO X`, `UNION`s and `POINTER TO X` types are not yet supported.
+1. Operations involving `UNION`s types are not yet supported.
 
-2. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow.
+2. To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `pValue^`.
+
+3. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow.
 
     Typical first call times for my RYZEN 3600X system with 1 isolated core are ~5ms for `ARRAY[0..999] OF LREAL` and ~40ms for `ARRAY[0..999] OF ST_STRUCT` where `ST_STRUCT` is:
     ```pascal
@@ -101,9 +120,9 @@ Read, Write and Invoke Method
     ```
     Subsequent calls resulted in read/write/method invoking times of 1-2ms for `ARRAY[0..999] OF LREAL` and ~20ms for `ARRAY[0..999] OF ST_STRUCT`. The task cycle time was 1ms.
 
-3. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain. There are no aliases in LabVIEW.
+4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain. There are no aliases in LabVIEW.
 
-4. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them.
+5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with defaults.
 
 
 Events
@@ -113,7 +132,7 @@ Events
 
     *NOTE: Any reads or writes running during this process will produce errors, just ignore these errors until reconnection is complete. They will stop once that happens.*
 
-2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disconnect.
+2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disposal.
 
 Other
 ------
