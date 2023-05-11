@@ -35,7 +35,7 @@ Fixes:
 # Showcase
 VIs included in the API:
 
-![Block Diagram](./assets/images/showcase.png)
+![Block Diagram](./assets/images/showcase.PNG)
 
 # Examples
 Invoke Method:
