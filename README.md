@@ -14,28 +14,28 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 # Changelog
 Notes:
 ------
-+ Preparation for VIMP.io release.
-+ To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `"pValue^"`.
-+ References are read like normal symbols.
++ Created a new [versioning convention](./docs/conventions/versioning.md).
 
 New Features:
 -------------
-+ Support for reading and writing to `POINTER`s and `REFERENCE`s.
-+ Support for reading and writing `FUNCTION BLOCK`s as clusters.
-+ Added VIs for reading and writing data as bytes.
-+ Added VI for reading symbol attributes e.g. `{attribute 'answer to everything' := '42'}`.
-+ Added VI for reading all namespaces.
-+ Added high-speed reading example.
++ Added VI for adding multiple symbol notifications.
++ Added VI for deleting multiple symbol notifications.
++ Added VI for clearing all symbol notifications.
++ Added VI for getting the names and cycle times for all symbol notifications.
++ Added extension VI for getting notification handle.
++ Added extension VI for deleting notification handle.
++ Added extension VI for getting symbol handle.
++ Added extension VI for removing symbol handle.
 
 Fixes:
 ------
-+ Fixed the issue in which you couldn't read aliases of `STRUCT`s
-+ Fixed .NET reference leaks in the `Read Method Information` VI
++ Fixed cases where characters after the null character in strings would show.
++ Fixed case where you couldn't use the event registration refnum as a control, indicator or constant.
 
 # Showcase
 VIs included in the API:
 
-![Block Diagram](./assets/images/showcase.PNG)
+![Block Diagram](./assets/images/showcase.png)
 
 # Examples
 Invoke Method:
