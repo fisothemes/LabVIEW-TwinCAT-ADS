@@ -12,25 +12,10 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 
 
 # Changelog
-Notes:
-------
-+ Created a new [versioning convention](./docs/conventions/versioning.md).
-
-New Features:
--------------
-+ Added VI for adding multiple symbol notifications.
-+ Added VI for deleting multiple symbol notifications.
-+ Added VI for clearing all symbol notifications.
-+ Added VI for getting the names and cycle times for all symbol notifications.
-+ Added extension VI for getting notification handle.
-+ Added extension VI for deleting notification handle.
-+ Added extension VI for getting symbol handle.
-+ Added extension VI for removing symbol handle.
 
 Fixes:
 ------
-+ Fixed cases where characters after the null character in strings would show.
-+ Fixed case where you couldn't use the event registration refnum as a control, indicator or constant.
++ Fixed failure in application build due to Flatten .NET Symbol Information.vi
 
 # Showcase
 VIs included in the API:

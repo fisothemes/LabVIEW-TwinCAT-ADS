@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-05-20 22:48:50" Creator="MzumaG01" Comments="" ID="864ced750a86dabcf3be0a12ec1e9976">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-05-23 09:39:06" Creator="MzumaG01" Comments="" ID="3f3b368723b2d62ac2d8758f42ef6611">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.0.1.6</Library_Version>
+    <Library_Version>1.0.2.7</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
     <Library_Output_Folder>builds\1.0.1.6</Library_Output_Folder>
@@ -81,19 +81,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
       <URL>https://github.com/fisothemes/LabVIEW-TwinCAT-ADS</URL>
       <Release_Notes>Fixes:
 ------
-+ Fixed cases where characters after the null character in strings would show.
-+ Fixed case where you couldn't use the event registration refnum as a control, indicator or constant.
-
-New Features:
----------------
-+ Added VI for adding multiple symbol notifications.
-+ Added VI for deleting multiple symbol notifications.
-+ Added VI for clearing all symbol notifications.
-+ Added VI for getting the names and cycle times for all symbol notifications.
-+ Added extension VI for getting notification handle.
-+ Added extension VI for deleting notification handle.
-+ Added extension VI for getting symbol handle.
-+ Added extension VI for removing symbol handle.</Release_Notes>
++ Fixed failure in application build due to Flatten .NET Symbol Information.vi</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -614,7 +602,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>573CF5757C6ACA4843AD29DA01078BB1</GUID>
+      <GUID>0FE0ED08787B0DD21171623939D25933</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -775,7 +763,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6BB68590EE288131E9626432D36D6C43</GUID>
+      <GUID>89E90C93274493DA4F841B00B83773BF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -810,7 +798,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FABE6881850D2A25304B435A73BA148C</GUID>
+      <GUID>B92FD2D264588FEE6F9BFE850A54D176</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1055,7 +1043,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Delete Notification By Handle.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6F15A135D7651314E4B05A856B100A53</GUID>
+      <GUID>EDF1481CF9D26D96A9C482F51A09BED7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1286,7 +1274,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Status\Read Symbol Attribute.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5BD59CC4A9FAC85008A72218104299CF</GUID>
+      <GUID>F784D32C5215C28D242280F9E8913BA6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1405,7 +1393,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D7EB3064C581E9941F3730E5730A1C33</GUID>
+      <GUID>033DE3BC87B04D16EB89C632F93C7791</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1566,7 +1554,7 @@ New Features:
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E56CBEE6879E41B099AB96A77BE79CA8</GUID>
+      <GUID>9EF97802249B53A164B0C47D258828D9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1643,7 +1631,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>80FFEC457721DEEF04F9CEA7564659A3</GUID>
+      <GUID>E34AEA0B7098784A2B922AB3EE327DF7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1762,7 +1750,7 @@ New Features:
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Multiple Symbol Notifications.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>90B44FF6BC4F315A0C801354C37AF460</GUID>
+      <GUID>CBE298F5D18210A2EB28BC6CE3B72A4A</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
