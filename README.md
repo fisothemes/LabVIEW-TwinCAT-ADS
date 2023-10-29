@@ -13,9 +13,28 @@ Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs 
 
 # Changelog
 
+New Features:
+-------------
++ Added VI for adding multiple symbol notifications.
++ Added VI for deleting multiple symbol notifications.
++ Added VI for clearing all symbol notifications.
++ Added VI for getting the names and cycle times for all symbol notifications.
++ Added extension VI for getting notification handle.
++ Added extension VI for deleting notification handle.
++ Added extension VI for getting symbol handle.
++ Added extension VI for removing symbol handle.
+
 Fixes:
 ------
-+ Fixed failure in application build due to Flatten .NET Symbol Information.vi
++ Fixed failure in application build due to Flatten .NET Symbol Information.vi.
++ Fixed nested function blocks not being read properly.
++ Fixed premature closure of cached .NET Symbol Information references by LabVIEW's garbage collector when calling the API's VIs in an Asynchronous VI.
++ Fixed cases where characters after the null character in strings would show.
++ Fixed case where you couldn't use the event registration refnum as a control, indicator or constant.
+
+Improvements:
+-------------
++ Read.vim automatically changes to read multiple when connecting an array of symbol names.
 
 # Showcase
 VIs included in the API:
@@ -87,7 +106,7 @@ Connection
 Read, Write and Invoke Method
 ---------------------------------
 
-1. Operations involving `UNION`s types are not yet supported.
+1. Operations involving `UNION`s and `INTERFACE` types are not yet supported.
 
 2. To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `pValue^`.
 
@@ -105,7 +124,7 @@ Read, Write and Invoke Method
     ```
     Subsequent calls resulted in read/write/method invoking times of 1-2ms for `ARRAY[0..999] OF LREAL` and ~20ms for `ARRAY[0..999] OF ST_STRUCT`. The task cycle time was 1ms.
 
-4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain. There are no aliases in LabVIEW.
+4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain.
 
 5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with defaults.
 

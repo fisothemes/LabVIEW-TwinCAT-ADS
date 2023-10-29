@@ -22,6 +22,10 @@
 			<Item Name="Reconnect and Disconnect.vi" Type="VI" URL="../Examples/Reconnect and Disconnect.vi"/>
 			<Item Name="Write To Symbol.vi" Type="VI" URL="../Examples/Write To Symbol.vi"/>
 		</Item>
+		<Item Name="Playground" Type="Folder">
+			<Item Name="Play Async Invoke.vi" Type="VI" URL="../Playground/Play Async Invoke.vi"/>
+			<Item Name="Play Function Block.vi" Type="VI" URL="../Playground/Play Function Block.vi"/>
+		</Item>
 		<Item Name="Showcase" Type="Folder">
 			<Item Name="Showcase.vi" Type="VI" URL="../Showcase/Showcase.vi"/>
 		</Item>

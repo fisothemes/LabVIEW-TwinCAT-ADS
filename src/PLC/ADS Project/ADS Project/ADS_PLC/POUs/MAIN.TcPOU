@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
   <POU Name="MAIN" Id="{ef0ca126-29ac-4ca2-946e-77fc5278adf9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbMessanger 				: FB_Messenger;
+	fbMessanger 			: FB_Messenger;
 	arstHTTP_Messages_In 	: ARRAY[0..2] OF ST_HTTP_MESSAGE;
 	arstHTTP_Messages_Out 	: ARRAY[0..2] OF ST_HTTP_MESSAGE;
+	arstStruct 				: ARRAY [0..999] OF ST_STRUCT;
+	arstCat 				: ARRAY [0..99] OF ST_CAT;
 END_VAR
 VAR CONSTANT
 	arstRequest_Line : ARRAY[0..2] OF ST_REQUEST_LINE :=

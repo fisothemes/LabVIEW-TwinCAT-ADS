@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="ST_CAT" Id="{0762c699-fd93-4bc7-a1ae-cab90e2ddac8}">
+    <Declaration><![CDATA[TYPE ST_CAT :
+STRUCT
+	bValue0, 
+	bValue1 : BOOL;
+	fValue 	: REAL; 
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -24,6 +24,9 @@
     <Compile Include="DUTs\E_OPERATION.TcTLEO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_CAT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_HEADER_FIELDS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_REQUEST_LINE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_STRUCT.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
