@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="T_Lreal" Id="{d216545f-a954-4a63-bf95-be8c80f78c6c}">
+    <Declaration><![CDATA[TYPE T_Lreal : LREAL; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

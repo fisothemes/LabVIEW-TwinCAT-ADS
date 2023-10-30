@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-10-29 01:01:15" Creator="MzumaG01" Comments="" ID="45f6a7c26e1fea451fca035c9a46fcbc">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-10-29 20:32:29" Creator="MzumaG01" Comments="" ID="c9d21191ae943f5c1d0202aae93bd1aa">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
     <Library_Version>1.1.3.12</Library_Version>
@@ -183,6 +183,21 @@ Improvements:
         <Namespace_Type>Prefix</Namespace_Type>
         <Namespace/>
       </Namespace_Overrides>
+      <Exclusions>
+        <Path>Tests-LV</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Test-PLC</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Playground</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Showcase</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>PLC</Path>
+      </Exclusions>
       <Place_Folder_Contents>
         <Path/>
       </Place_Folder_Contents>
@@ -625,7 +640,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CEA99F758954DCC876D1F7F95C1319BF</GUID>
+      <GUID>FB333A153089CD713EFB68838DE3205A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -786,7 +801,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>19B5424CFEE23B148C38671C1DBF9394</GUID>
+      <GUID>879D8D0D8991D60FEFF868C99517D4A9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -821,7 +836,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D4507AC1035677DEC235A830704FF934</GUID>
+      <GUID>114353BE88935E6C80244CCFB755CC0D</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1066,7 +1081,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Delete Notification By Handle.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5D8C4E944794404CFF5183CAFD02907C</GUID>
+      <GUID>8016CF6570AA7AB7267A1937B6AECF86</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1297,7 +1312,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Status\Read Symbol Attribute.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D87C69D04CEA74455B5969E962412EE1</GUID>
+      <GUID>CDC05AF3B5A064AB95A113C86CA9DF1C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1416,7 +1431,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D41FB3D4122D573AF224E501482FDB4E</GUID>
+      <GUID>A59229F69F9F1B3D72B3C274A1FA2846</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1577,7 +1592,7 @@ Improvements:
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>68948723FF7969AA879BC81B818106AD</GUID>
+      <GUID>0C75B4DAA9EFA84FC4348579635DBA8F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1654,7 +1669,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A9C1B74FF3BA7ED1ABB09A2CD44D33CB</GUID>
+      <GUID>203003EA47CA20F0A6F188F0B32DBE19</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1773,7 +1788,7 @@ Improvements:
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Multiple Symbol Notifications.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2E21A0043A3AFB6654783C3C8B062DA4</GUID>
+      <GUID>E1C8A63DEA17906E17176959665008C8</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

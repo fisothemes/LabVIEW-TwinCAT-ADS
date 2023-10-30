@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="FB_Simple" Id="{dc49e100-f1fa-47f6-a9fc-b3d52dc7fa87}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Simple
+VAR
+	_bMember	: T_Bool := TRUE;
+	_nMember 	: T_Dint := -57;
+	_sMember 	: STRING := 'Testing Error.';
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{60f0206e-3a0d-4899-a0be-a72a6a95cd02}">
+      <Declaration><![CDATA[{attribute 'hide'}
+METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	bMember	: T_Bool;
+	nMember : T_Dint;
+	sMember : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^._bMember := bMember;
+THIS^._nMember := nMember;
+THIS^._sMember := sMember;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Invoke" Id="{a6d48bae-d483-4b34-8d82-adfe35f3aa39}">
+      <Declaration><![CDATA[{attribute 'TcRpcEnable'}
+METHOD Invoke : BOOL
+VAR_INPUT
+	sValue : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Invoke := TRUE;
+THIS^._sMember := sValue;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Simple">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Simple.FB_init">
+      <LineId Id="7" Count="0" />
+      <LineId Id="12" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_Simple.Invoke">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

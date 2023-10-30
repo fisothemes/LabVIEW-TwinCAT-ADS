@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="P_Read" Id="{a1c0d52e-73fc-4198-9423-98c7245cf4d6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Read
+VAR
+	bBoolean 		: BOOL 						:= TRUE;
+	            	        					
+	nByte 			: BYTE 						:= 32;
+	nWord 			: WORD 						:= 31_234;
+	nDword 			: DWORD 					:= 400_001;
+	nLword 			: LWORD						:= 1_872_635_651_236;
+	nSint 			: SINT 						:= -58;
+	nUsint 			: USINT 					:= 254;
+	nInt 			: INT						:= -32_688;
+	nUint 			: UINT 						:= 65_456;
+	nDint 			: DINT						:= -321_000_865;
+	nUdint 			: UDINT						:= 4_268_999_001;
+	nLint 			: LINT 						:= -18_000_100_020_003;
+	nUlint 			: ULINT 					:= 45_000_100_020_003;
+	
+	nIntSubRange 	: INT(-4000..4000) 			:= -3996;
+	
+	fReal 			: REAL						:= -3.14;
+	fLreal 			: LREAL						:= 44E2;
+	
+	sCleanString 	: STRING 					:= 'Hello World!';
+	sDirtyString 	: STRING 					:= sCleanString;
+	wsCleanString 	: WSTRING 					:= "Hello World!";
+	wsDirtyString 	: WSTRING 					:= wsCleanString;
+	                                        	
+	tTime 			: TIME 						:= T#4000MS;
+	tLtime			: LTIME 					:= LTIME#12NS;
+	dtDateTime 		: DT 						:= DT#2020-2-7-12:55:1.234;
+	daDate 			: DATE 						:= DATE#2021-6-17;
+	todTimeOfDay 	: TOD 						:= TOD#13:43:59.432;
+	                                        	
+	eEnum 			: E_Enum 					:= E_Enum.Member1;
+	                                        	
+	stSimple 		: ST_Simple 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);
+	stPacked 		: ST_Packed 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);
+	stComplex 		: ST_Complex 				:= (stSimpleMember := stSimple, stPackedMember := stPacked, eMember := E_Enum.Member2, arrfMember := [1.23, 3.33]);
+	
+	fbSimple 		: FB_Simple(TRUE, -57, 'Simple Test.');
+	fbPacked 		: FB_Packed 				:= (bMember := TRUE, nMember := 12, sMember := 'Packed Test.');
+	fbComplex		: FB_Complex;
+	
+	arrnInt 		: ARRAY[1..2] OF INT 		:= [-99, 99];
+	arrfReal 		: ARRAY[0..2, 0..2] OF REAL := [2(10), 2(20), 2(30), 3(40)];
+	
+	refBool 		: REFERENCE TO BOOL 		REF= bBoolean;
+	refDint 		: REFERENCE TO DINT 		REF= nDint;
+	refString 		: REFERENCE TO STRING 		REF= sCleanString;
+	refTime 		: REFERENCE TO TIME 		REF= tTime;
+	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
+	refDate 		: REFERENCE TO DATE 		REF= daDate;
+	refTimeOfDay 	: REFERENCE TO TOD 			REF= todTimeOfDay;
+	refStruct 		: REFERENCE TO ST_Complex 	REF= stComplex;
+	refFuncBlock 	: REFERENCE TO FB_Complex	REF= fbComplex;
+	refArray 		: REFERENCE TO ARRAY[0..2, 0..2] OF REAL REF= arrfReal;
+	
+	pBool 			: POINTER TO BOOL 			:= ADR(bBoolean);
+	pDint 			: POINTER TO DINT 			:= ADR(nDint);
+	pString 		: POINTER TO STRING 		:= ADR(sCleanString);
+	pTime 			: POINTER TO TIME 			:= ADR(tTime);
+	pDateTime 		: POINTER TO DT 			:= ADR(dtDateTime);
+	pDate 			: POINTER TO DATE 			:= ADR(daDate);
+	pTimeOfDay 		: POINTER TO TOD 			:= ADR(todTimeOfDay);
+	pStruct 		: POINTER TO ST_Complex 	:= ADR(stComplex);
+	pFuncBlock 		: POINTER TO FB_Complex		:= ADR(fbComplex);
+	pArray 			: POINTER TO ARRAY[0..2, 0..2] OF REAL := ADR(arrfReal);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[sDirtyString := 'Ahh!';
+wsDirtyString := "Ahh!";]]></ST>
+    </Implementation>
+    <LineIds Name="P_Read">
+      <LineId Id="2" Count="0" />
+      <LineId Id="53" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
