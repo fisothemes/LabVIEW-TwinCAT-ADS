@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_Complex" Id="{e45034a7-979a-4ae9-ad47-43216a229aae}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Complex
 VAR

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_Packed" Id="{5bb1f1cf-d4c9-40dc-915a-25d6b054702a}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'pack_mode' := '1'} 
 FUNCTION_BLOCK FB_Packed

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="T_SimpleStruct" Id="{0f007a22-d954-4a41-861d-fc41bc28cb8f}">
+    <Declaration><![CDATA[TYPE T_SimpleStruct : ST_Simple; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

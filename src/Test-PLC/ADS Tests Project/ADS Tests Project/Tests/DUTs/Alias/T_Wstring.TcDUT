@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="T_Wstring" Id="{9dc87915-8ff7-4698-86bd-fc94d0da82fd}">
+    <Declaration><![CDATA[TYPE T_Wstring : WSTRING; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
