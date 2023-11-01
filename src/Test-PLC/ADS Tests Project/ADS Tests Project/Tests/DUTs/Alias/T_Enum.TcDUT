@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="T_Enum" Id="{cdca9a92-3731-4511-abf0-87964f650eb1}">
+    <Declaration><![CDATA[TYPE T_Enum : E_Enum; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

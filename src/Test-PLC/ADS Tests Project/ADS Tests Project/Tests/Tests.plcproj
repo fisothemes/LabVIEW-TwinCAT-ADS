@@ -22,6 +22,9 @@
     <Compile Include="DUTs\Alias\T_Bool.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Alias\T_Enum.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Alias\T_SimpleStruct.TcDUT">
       <SubType>Code</SubType>
     </Compile>

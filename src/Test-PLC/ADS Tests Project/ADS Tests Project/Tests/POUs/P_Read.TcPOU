@@ -36,11 +36,12 @@ VAR
 	                                        	
 	tTime 			: TIME 						:= T#4000MS;
 	tLtime			: LTIME 					:= LTIME#12NS;
-	dtDateTime 		: DT 						:= DT#2020-2-7-12:55:1.234;
+	dtDateTime 		: DT 						:= DT#2020-2-7-12:55:1;
 	daDate 			: DATE 						:= DATE#2021-6-17;
 	todTimeOfDay 	: TOD 						:= TOD#13:43:59.432;
 	                                        	
 	eEnum 			: E_Enum 					:= E_Enum.Member1;
+	t_Enum 			: T_Enum					:= E_Enum.Member1;
 	                                        	
 	stSimple 		: ST_Simple 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);
 	stPacked 		: ST_Packed 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);

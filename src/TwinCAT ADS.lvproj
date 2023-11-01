@@ -34,6 +34,9 @@
 			<Item Name="Test Booleans" Type="Folder">
 				<Item Name="Test Read Booleans.vi" Type="VI" URL="../Tests-LV/Test Read Booleans.vi"/>
 			</Item>
+			<Item Name="Test Date &amp; Time" Type="Folder">
+				<Item Name="Test Read Date &amp; Time.vi" Type="VI" URL="../Tests-LV/Test Read Date &amp; Time.vi"/>
+			</Item>
 			<Item Name="Test Numerics" Type="Folder">
 				<Item Name="Test Read Numerics.vi" Type="VI" URL="../Tests-LV/Test Read Numerics.vi"/>
 			</Item>
