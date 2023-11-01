@@ -63,6 +63,7 @@ VAR
 	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
 	refDate 		: REFERENCE TO DATE 		REF= daDate;
 	refTimeOfDay 	: REFERENCE TO TOD 			REF= todTimeOfDay;
+	refEnum 		: REFERENCE TO E_Enum;
 	refStruct 		: REFERENCE TO ST_Complex 	REF= stComplex;
 	refFuncBlock 	: REFERENCE TO FB_Complex	REF= fbComplex;
 	refArray 		: REFERENCE TO ARRAY[0..2, 0..2] OF REAL REF= arrfReal;
@@ -76,6 +77,7 @@ VAR
 	pDateTime 		: POINTER TO DT 			:= ADR(dtDateTime);
 	pDate 			: POINTER TO DATE 			:= ADR(daDate);
 	pTimeOfDay 		: POINTER TO TOD 			:= ADR(todTimeOfDay);
+	pEnum 			: POINTER TO E_Enum			:= ADR(eEnum);
 	pStruct 		: POINTER TO ST_Complex 	:= ADR(stComplex);
 	pFuncBlock 		: POINTER TO FB_Complex		:= ADR(fbComplex);
 	pArray 			: POINTER TO ARRAY[0..2, 0..2] OF REAL := ADR(arrfReal);
@@ -85,11 +87,13 @@ END_VAR
     <Implementation>
       <ST><![CDATA[sDirtyString := 'Ahh!';
 wsDirtyString := "Ahh!";
+refEnum REF= eEnum; // This is here because the compiler does not like initialising references to enums.
 ]]></ST>
     </Implementation>
     <LineIds Name="P_Read">
       <LineId Id="2" Count="0" />
       <LineId Id="53" Count="0" />
+      <LineId Id="211" Count="0" />
       <LineId Id="128" Count="0" />
     </LineIds>
   </POU>

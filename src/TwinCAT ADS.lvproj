@@ -30,12 +30,17 @@
 			<Item Name="Showcase.vi" Type="VI" URL="../Showcase/Showcase.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
-			<Item Name="Controls" Type="Folder"/>
+			<Item Name="Controls" Type="Folder">
+				<Item Name="Enum.ctl" Type="VI" URL="../Tests-LV/Controls/Enum.ctl"/>
+			</Item>
 			<Item Name="Test Booleans" Type="Folder">
 				<Item Name="Test Read Booleans.vi" Type="VI" URL="../Tests-LV/Test Read Booleans.vi"/>
 			</Item>
 			<Item Name="Test Date &amp; Time" Type="Folder">
 				<Item Name="Test Read Date &amp; Time.vi" Type="VI" URL="../Tests-LV/Test Read Date &amp; Time.vi"/>
+			</Item>
+			<Item Name="Test Enums" Type="Folder">
+				<Item Name="Test Read Enums.vi" Type="VI" URL="../Tests-LV/Test Read Enums.vi"/>
 			</Item>
 			<Item Name="Test Numerics" Type="Folder">
 				<Item Name="Test Read Numerics.vi" Type="VI" URL="../Tests-LV/Test Read Numerics.vi"/>
