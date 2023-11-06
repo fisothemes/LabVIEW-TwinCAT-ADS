@@ -26,7 +26,6 @@ VAR
 	fLreal 			: LREAL						:= 44E2;
 	t_Lreal 		: T_Lreal					:= 1.2E-2;
 	
-	
 	sCleanString 	: STRING 					:= 'Hello World!';
 	sDirtyString 	: STRING 					:= sCleanString;
 	wsCleanString 	: WSTRING 					:= "Hello World!";
@@ -36,23 +35,27 @@ VAR
 	                                        	
 	tTime 			: TIME 						:= T#4000MS;
 	tLtime			: LTIME 					:= LTIME#12NS;
-	dtDateTime 		: DT 						:= DT#2020-2-7-12:55:1;
+	dtDateTime 		: DT 						:= DT#2020-2-7-12:55:01;
 	daDate 			: DATE 						:= DATE#2021-6-17;
 	todTimeOfDay 	: TOD 						:= TOD#13:43:59.432;
 	                                        	
 	eEnum 			: E_Enum 					:= E_Enum.Member1;
 	t_Enum 			: T_Enum					:= E_Enum.Member1;
 	                                        	
-	stSimple 		: ST_Simple 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);
-	stPacked 		: ST_Packed 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:1.234, fMember := 1.448);
-	stComplex 		: ST_Complex 				:= (stSimpleMember := stSimple, stPackedMember := stPacked, eMember := E_Enum.Member2, arrfMember := [1.23, 3.33, 9(1.11)]);
+	stSimple 		: ST_Simple 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:01, nMember := 448);
+	stPacked 		: ST_Packed 				:= (bMember := TRUE, dtMember := DT#2023-3-10-15:30:01, fMember := 1.444);
+	stComplex 		: ST_Complex 				:= (bMember := TRUE, eMember := E_Enum.Member2, stSimpleMember := stSimple, stPackedMember := stPacked, arrfMember := [1.23, 3.33, 1.11]);
+	t_SimpleStruct 	: T_SimpleStruct			:= stSimple;
 	
 	fbSimple 		: FB_Simple(TRUE, -57, 'Simple Test.');
 	fbPacked 		: FB_Packed 				:= (bMember := TRUE, nMember := 12, sMember := 'Packed Test.');
 	fbComplex		: FB_Complex;
+	t_PackedFb 		: T_PackedFb 				:= fbPacked;
 	
 	arrnInt 		: ARRAY[1..2] OF INT 		:= [-99, 99];
-	arrfReal 		: ARRAY[0..2, 0..2] OF REAL := [2(10), 2(20), 2(30), 3(40)];
+	arrfReal 		: ARRAY[1..3, 0..2] OF REAL := [2(10), 2(20), 2(30), 3(40)];
+	ararfReal 		: ARRAY[0..2] OF ARRAY[0..2] OF REAL := [[3(10)], [3(20)], [3(30)]];
+	arrarfReal 		: ARRAY[0..1, 0..2] OF ARRAY[0..2] OF LREAL := [3([3(11.5)]), 3([3(22.6)])];
 	arrstComplex 	: ARRAY[0..1, 0..1] OF ST_Complex := [2(stComplex), 2(stComplex)];
 	
 	refBool 		: REFERENCE TO BOOL 		REF= bBoolean;
@@ -66,7 +69,7 @@ VAR
 	refEnum 		: REFERENCE TO E_Enum;
 	refStruct 		: REFERENCE TO ST_Complex 	REF= stComplex;
 	refFuncBlock 	: REFERENCE TO FB_Complex	REF= fbComplex;
-	refArray 		: REFERENCE TO ARRAY[0..2, 0..2] OF REAL REF= arrfReal;
+	refArray 		: REFERENCE TO ARRAY[1..3, 0..2] OF REAL REF= arrfReal;
 	refarrstComplex : REFERENCE TO ARRAY[0..1, 0..1] OF ST_Complex REF= arrstComplex;
 	
 	pBool 			: POINTER TO BOOL 			:= ADR(bBoolean);
@@ -80,7 +83,7 @@ VAR
 	pEnum 			: POINTER TO E_Enum			:= ADR(eEnum);
 	pStruct 		: POINTER TO ST_Complex 	:= ADR(stComplex);
 	pFuncBlock 		: POINTER TO FB_Complex		:= ADR(fbComplex);
-	pArray 			: POINTER TO ARRAY[0..2, 0..2] OF REAL := ADR(arrfReal);
+	pArray 			: POINTER TO ARRAY[1..3, 0..2] OF REAL := ADR(arrfReal);
 	parrstComplex 	: POINTER TO ARRAY[0..1, 0..1] OF ST_Complex := ADR(arrstComplex);
 END_VAR
 ]]></Declaration>

@@ -3,8 +3,8 @@
   <POU Name="FB_Complex" Id="{e45034a7-979a-4ae9-ad47-43216a229aae}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Complex
 VAR
-	_fMember 		: LREAL;
-	_stMember 		: ST_Complex; 
+	_fMember 		: LREAL := 67.5;
+	_stMember 		: ST_Complex := (bMember := TRUE, eMember := E_Enum.Member2, arrfMember := [1.23, 3.33, 1.11]); 
 	_fbSimpleMember : FB_Simple(TRUE, 78, 'Complex Test.');
 	_fbPackedMember : FB_Packed;
 END_VAR

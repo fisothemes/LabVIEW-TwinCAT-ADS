@@ -5,7 +5,7 @@
 STRUCT
 	bMember  		: BOOL;
     dtMember 		: DT;
-	fMember   		: LREAL;
+	nMember   		: DINT;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -32,6 +32,15 @@
 		<Item Name="Tests" Type="Folder">
 			<Item Name="Controls" Type="Folder">
 				<Item Name="Enum.ctl" Type="VI" URL="../Tests-LV/Controls/Enum.ctl"/>
+				<Item Name="FB_Complex.ctl" Type="VI" URL="../Tests-LV/Controls/FB_Complex.ctl"/>
+				<Item Name="FB_Packed.ctl" Type="VI" URL="../Tests-LV/Controls/FB_Packed.ctl"/>
+				<Item Name="FB_Simple.ctl" Type="VI" URL="../Tests-LV/Controls/FB_Simple.ctl"/>
+				<Item Name="ST_Complex.ctl" Type="VI" URL="../Tests-LV/Controls/ST_Complex.ctl"/>
+				<Item Name="ST_Packed.ctl" Type="VI" URL="../Tests-LV/Controls/ST_Packed.ctl"/>
+				<Item Name="ST_Simple.ctl" Type="VI" URL="../Tests-LV/Controls/ST_Simple.ctl"/>
+			</Item>
+			<Item Name="Test Arrays" Type="Folder">
+				<Item Name="Test Read Arrays.vi" Type="VI" URL="../Tests-LV/Test Read Arrays.vi"/>
 			</Item>
 			<Item Name="Test Booleans" Type="Folder">
 				<Item Name="Test Read Booleans.vi" Type="VI" URL="../Tests-LV/Test Read Booleans.vi"/>
@@ -42,11 +51,20 @@
 			<Item Name="Test Enums" Type="Folder">
 				<Item Name="Test Read Enums.vi" Type="VI" URL="../Tests-LV/Test Read Enums.vi"/>
 			</Item>
+			<Item Name="Test Function Blocks" Type="Folder">
+				<Item Name="Test Read Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Read Function Blocks.vi"/>
+			</Item>
+			<Item Name="Test Multiple" Type="Folder">
+				<Item Name="Test Read Multiple.vi" Type="VI" URL="../Tests-LV/Test Read Multiple.vi"/>
+			</Item>
 			<Item Name="Test Numerics" Type="Folder">
 				<Item Name="Test Read Numerics.vi" Type="VI" URL="../Tests-LV/Test Read Numerics.vi"/>
 			</Item>
 			<Item Name="Test Strings" Type="Folder">
 				<Item Name="Test Read Strings.vi" Type="VI" URL="../Tests-LV/Test Read Strings.vi"/>
+			</Item>
+			<Item Name="Test Structs" Type="Folder">
+				<Item Name="Test Read Structs.vi" Type="VI" URL="../Tests-LV/Test Read Structs.vi"/>
 			</Item>
 			<Item Name="Run Tests.vi" Type="VI" URL="../Tests-LV/Run Tests.vi"/>
 		</Item>

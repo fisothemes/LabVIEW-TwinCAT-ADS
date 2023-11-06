@@ -28,7 +28,7 @@
     <Compile Include="DUTs\Alias\T_SimpleStruct.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\Alias\T_SimpleFb.TcDUT">
+    <Compile Include="DUTs\Alias\T_PackedFb.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Alias\T_String.TcDUT">

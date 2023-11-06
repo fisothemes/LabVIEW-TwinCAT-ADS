@@ -138,6 +138,15 @@ Events
 
 2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disposal.
 
+
+Unit Testing
+------
+
+1. [JKI's Caraya Unit Test Framework](https://www.vipm.io/package/jki_lib_caraya/) is used for unit testing.
+
+2. To run unit tests simply activate the PLC project located at [src/Test-PLC](./src/Test-PLC/), open the LabVIEW project and then run the `Run Tests` VI in the Tests virtual folder.
+
+
 Other
 ------
 1. When using extensions. Please only close the .NET references with an asterisk (*) on their label at the connector pane. The ones without an * are managed for you.

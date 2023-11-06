@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <DUT Name="T_SimpleFb" Id="{ad4d2d93-9a47-4003-8ac2-35dc8b8c555b}">
-    <Declaration><![CDATA[TYPE T_SimpleFb : FB_Simple; END_TYPE
-]]></Declaration>
-  </DUT>
-</TcPlcObject>
