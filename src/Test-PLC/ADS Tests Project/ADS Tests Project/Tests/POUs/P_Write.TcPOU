@@ -3,10 +3,78 @@
   <POU Name="P_Write" Id="{516125b6-7d34-4d90-99da-f27ea541b47a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Write
 VAR
-END_VAR
-]]></Declaration>
+	bBoolean 		: BOOL;
+	t_Bool 			: T_Bool;
+	refBool 		: REFERENCE TO BOOL 		REF= bBoolean;
+	pBool 			: POINTER TO BOOL 			:= ADR(bBoolean);
+	
+	nDint 			: DINT;
+	t_Dint 			: T_Dint;
+	refDint 		: REFERENCE TO DINT 		REF= nDint;
+	pDint 			: POINTER TO DINT 			:= ADR(nDint);
+	
+	fLreal 			: LREAL;
+	t_Lreal 		: T_Lreal;
+	refLreal 		: REFERENCE TO LREAL 		REF= fLreal;
+	pLreal 			: POINTER TO LREAL 			:= ADR(fLreal);
+	
+	sString 		: STRING;
+	t_String 		: T_String;
+	refString 		: REFERENCE TO STRING 		REF= sString;
+	pString 		: POINTER TO STRING 		:= ADR(sString);
+	
+	wsString 		: WSTRING;
+	t_Wstring 		: T_WString;
+	refWstring 		: REFERENCE TO WSTRING 		REF= wsString;
+	pWstring 		: POINTER TO WSTRING 		:= ADR(wsString);
+	
+	tTime 			: TIME;	
+	tLtime			: LTIME;
+	dtDateTime 		: DT;
+	daDate 			: DATE;
+	todTimeOfDay 	: TOD;
+	
+	refTime 		: REFERENCE TO TIME 		REF= tTime;
+	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
+	refDate 		: REFERENCE TO DATE 		REF= daDate;
+	refTimeOfDay 	: REFERENCE TO TOD 			REF= todTimeOfDay;
+	
+	pTime 			: POINTER TO TIME 			:= ADR(tTime);
+	pDateTime 		: POINTER TO DT 			:= ADR(dtDateTime);
+	pDate 			: POINTER TO DATE 			:= ADR(daDate);
+	pTimeOfDay 		: POINTER TO TOD 			:= ADR(todTimeOfDay);
+	
+	eEnum 			: E_Enum;
+	t_Enum 			: T_Enum;
+	refEnum 		: REFERENCE TO E_Enum;
+	pEnum 			: POINTER TO E_Enum			:= ADR(eEnum);
+	
+	stSimple 		: ST_Simple;
+	stPacked 		: ST_Packed;
+	stComplex 		: ST_Complex;
+	t_SimpleStruct 	: T_SimpleStruct;
+	refStruct 		: REFERENCE TO ST_Complex 	REF= stComplex;
+	pStruct 		: POINTER TO ST_Complex 	:= ADR(stComplex);
+	
+	fbSimple 		: FB_Simple(0, 0, '');
+	fbPacked 		: FB_Packed;
+	fbComplex		: FB_Complex;
+	t_PackedFb 		: T_PackedFb;
+	refFuncBlock 	: REFERENCE TO FB_Complex	REF= fbComplex;
+	pFuncBlock 		: POINTER TO FB_Complex		:= ADR(fbComplex);
+	
+	arrnInt 		: ARRAY[1..2] OF INT;
+	arrfReal 		: ARRAY[1..3, 0..2] OF REAL;
+	ararfReal 		: ARRAY[0..2] OF ARRAY[0..2] OF REAL;
+	arrarfReal 		: ARRAY[0..1, 0..2] OF ARRAY[0..2] OF LREAL;
+	arrstComplex 	: ARRAY[0..1, 0..1] OF ST_Complex;
+	refArray 		: REFERENCE TO ARRAY[1..3, 0..2] OF REAL REF= arrfReal;
+	refarrstComplex : REFERENCE TO ARRAY[0..1, 0..1] OF ST_Complex REF= arrstComplex;
+	pArray 			: POINTER TO ARRAY[1..3, 0..2] OF REAL := ADR(arrfReal);
+	parrstComplex 	: POINTER TO ARRAY[0..1, 0..1] OF ST_Complex := ADR(arrstComplex);
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[refEnum REF= eEnum; // This is here because the compiler does not like initialising references to enums.]]></ST>
     </Implementation>
     <LineIds Name="P_Write">
       <LineId Id="2" Count="0" />
