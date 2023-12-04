@@ -11,37 +11,40 @@ VAR
 	nDint 			: DINT;
 	t_Dint 			: T_Dint;
 	refDint 		: REFERENCE TO DINT 		REF= nDint;
-	pDint 			: POINTER TO DINT 			:= ADR(nDint);
+	pDint 			: POINTER TO DINT 			:= ADR(t_Dint);
 	
 	fLreal 			: LREAL;
 	t_Lreal 		: T_Lreal;
 	refLreal 		: REFERENCE TO LREAL 		REF= fLreal;
-	pLreal 			: POINTER TO LREAL 			:= ADR(fLreal);
+	pLreal 			: POINTER TO LREAL 			:= ADR(t_Lreal);
 	
 	sString 		: STRING;
 	t_String 		: T_String;
 	refString 		: REFERENCE TO STRING 		REF= sString;
-	pString 		: POINTER TO STRING 		:= ADR(sString);
+	pString 		: POINTER TO STRING 		:= ADR(t_String);
 	
 	wsString 		: WSTRING;
 	t_Wstring 		: T_WString;
 	refWstring 		: REFERENCE TO WSTRING 		REF= wsString;
-	pWstring 		: POINTER TO WSTRING 		:= ADR(wsString);
+	pWstring 		: POINTER TO WSTRING 		:= ADR(t_Wstring);
 	
-	tTime 			: TIME;	
-	tLtime			: LTIME;
-	dtDateTime 		: DT;
-	daDate 			: DATE;
-	todTimeOfDay 	: TOD;
-	
+	tTime 			: TIME;
 	refTime 		: REFERENCE TO TIME 		REF= tTime;
-	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
-	refDate 		: REFERENCE TO DATE 		REF= daDate;
-	refTimeOfDay 	: REFERENCE TO TOD 			REF= todTimeOfDay;
-	
 	pTime 			: POINTER TO TIME 			:= ADR(tTime);
+	
+	tLtime			: LTIME;
+	refLtime		: REFERENCE TO LTIME 		REF= tLtime;
+	
+	dtDateTime 		: DT;
+	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
 	pDateTime 		: POINTER TO DT 			:= ADR(dtDateTime);
+	
+	daDate 			: DATE;
+	refDate 		: REFERENCE TO DATE 		REF= daDate;
 	pDate 			: POINTER TO DATE 			:= ADR(daDate);
+	
+	todTimeOfDay 	: TOD;
+	refTimeOfDay 	: REFERENCE TO TOD 			REF= todTimeOfDay;
 	pTimeOfDay 		: POINTER TO TOD 			:= ADR(todTimeOfDay);
 	
 	eEnum 			: E_Enum;

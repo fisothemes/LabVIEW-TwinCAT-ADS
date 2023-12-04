@@ -60,9 +60,11 @@
 			</Item>
 			<Item Name="Test Numerics" Type="Folder">
 				<Item Name="Test Read Numerics.vi" Type="VI" URL="../Tests-LV/Test Read Numerics.vi"/>
+				<Item Name="Test Write Numerics.vi" Type="VI" URL="../Tests-LV/Test Write Numerics.vi"/>
 			</Item>
 			<Item Name="Test Strings" Type="Folder">
 				<Item Name="Test Read Strings.vi" Type="VI" URL="../Tests-LV/Test Read Strings.vi"/>
+				<Item Name="Test Write Strings.vi" Type="VI" URL="../Tests-LV/Test Write Strings.vi"/>
 			</Item>
 			<Item Name="Test Structs" Type="Folder">
 				<Item Name="Test Read Structs.vi" Type="VI" URL="../Tests-LV/Test Read Structs.vi"/>
