@@ -55,8 +55,8 @@ VAR
 	stSimple 		: ST_Simple;
 	stPacked 		: ST_Packed;
 	stComplex 		: ST_Complex;
-	t_SimpleStruct 	: T_SimpleStruct;
-	refStruct 		: REFERENCE TO ST_Complex 	REF= stComplex;
+	t_Struct 		: T_SimpleStruct;
+	refStruct		: REFERENCE TO ST_Complex 	REF= stComplex;
 	pStruct 		: POINTER TO ST_Complex 	:= ADR(stComplex);
 	
 	fbSimple 		: FB_Simple(0, 0, '');

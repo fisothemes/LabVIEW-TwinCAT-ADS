@@ -51,6 +51,7 @@
 			</Item>
 			<Item Name="Test Enums" Type="Folder">
 				<Item Name="Test Read Enums.vi" Type="VI" URL="../Tests-LV/Test Read Enums.vi"/>
+				<Item Name="Test Write Enums.vi" Type="VI" URL="../Tests-LV/Test Write Enums.vi"/>
 			</Item>
 			<Item Name="Test Function Blocks" Type="Folder">
 				<Item Name="Test Read Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Read Function Blocks.vi"/>
@@ -68,6 +69,7 @@
 			</Item>
 			<Item Name="Test Structs" Type="Folder">
 				<Item Name="Test Read Structs.vi" Type="VI" URL="../Tests-LV/Test Read Structs.vi"/>
+				<Item Name="Test Write Structs.vi" Type="VI" URL="../Tests-LV/Test Write Structs.vi"/>
 			</Item>
 			<Item Name="Run Tests.vi" Type="VI" URL="../Tests-LV/Run Tests.vi"/>
 		</Item>
