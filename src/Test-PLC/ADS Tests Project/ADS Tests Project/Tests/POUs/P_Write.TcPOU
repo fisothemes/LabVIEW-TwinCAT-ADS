@@ -34,6 +34,7 @@ VAR
 	
 	tLtime			: LTIME;
 	refLtime		: REFERENCE TO LTIME 		REF= tLtime;
+	pLTime			: POINTER TO LTIME 			:= ADR(tLtime);
 	
 	dtDateTime 		: DT;
 	refDateTime 	: REFERENCE TO DT 			REF= dtDateTime;
@@ -79,8 +80,5 @@ END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[refEnum REF= eEnum; // This is here because the compiler does not like initialising references to enums.]]></ST>
     </Implementation>
-    <LineIds Name="P_Write">
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

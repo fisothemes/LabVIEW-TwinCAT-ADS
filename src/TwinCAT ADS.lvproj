@@ -48,6 +48,7 @@
 			</Item>
 			<Item Name="Test Date &amp; Time" Type="Folder">
 				<Item Name="Test Read Date &amp; Time.vi" Type="VI" URL="../Tests-LV/Test Read Date &amp; Time.vi"/>
+				<Item Name="Test Write Date &amp; Time.vi" Type="VI" URL="../Tests-LV/Test Write Date &amp; Time.vi"/>
 			</Item>
 			<Item Name="Test Enums" Type="Folder">
 				<Item Name="Test Read Enums.vi" Type="VI" URL="../Tests-LV/Test Read Enums.vi"/>
