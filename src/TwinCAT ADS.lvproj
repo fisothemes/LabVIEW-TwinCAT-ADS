@@ -41,6 +41,7 @@
 			</Item>
 			<Item Name="Test Arrays" Type="Folder">
 				<Item Name="Test Read Arrays.vi" Type="VI" URL="../Tests-LV/Test Read Arrays.vi"/>
+				<Item Name="Test Write Arrays.vi" Type="VI" URL="../Tests-LV/Test Write Arrays.vi"/>
 			</Item>
 			<Item Name="Test Booleans" Type="Folder">
 				<Item Name="Test Read Booleans.vi" Type="VI" URL="../Tests-LV/Test Read Booleans.vi"/>
