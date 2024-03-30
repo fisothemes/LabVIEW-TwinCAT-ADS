@@ -51,7 +51,7 @@ VAR
 	eEnum 			: E_Enum;
 	t_Enum 			: T_Enum;
 	refEnum 		: REFERENCE TO E_Enum;
-	pEnum 			: POINTER TO E_Enum			:= ADR(eEnum);
+	pEnum 			: POINTER TO E_Enum			:= ADR(t_Enum);
 	
 	stSimple 		: ST_Simple;
 	stPacked 		: ST_Packed;

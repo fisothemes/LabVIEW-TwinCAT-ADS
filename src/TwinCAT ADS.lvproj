@@ -56,6 +56,7 @@
 			</Item>
 			<Item Name="Test Function Blocks" Type="Folder">
 				<Item Name="Test Read Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Read Function Blocks.vi"/>
+				<Item Name="Test Write Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Write Function Blocks.vi"/>
 			</Item>
 			<Item Name="Test Multiple" Type="Folder">
 				<Item Name="Test Read Multiple.vi" Type="VI" URL="../Tests-LV/Test Read Multiple.vi"/>
