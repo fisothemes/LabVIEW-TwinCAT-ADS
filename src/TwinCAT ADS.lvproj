@@ -61,6 +61,7 @@
 			</Item>
 			<Item Name="Test Multiple" Type="Folder">
 				<Item Name="Test Read Multiple.vi" Type="VI" URL="../Tests-LV/Test Read Multiple.vi"/>
+				<Item Name="Test Write Multiple.vi" Type="VI" URL="../Tests-LV/Test Write Multiple.vi"/>
 			</Item>
 			<Item Name="Test Numerics" Type="Folder">
 				<Item Name="Test Read Numerics.vi" Type="VI" URL="../Tests-LV/Test Read Numerics.vi"/>
