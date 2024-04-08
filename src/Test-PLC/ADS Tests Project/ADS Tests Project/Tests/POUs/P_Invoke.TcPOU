@@ -8,8 +8,16 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <LineIds Name="P_Invoke">
-      <LineId Id="5" Count="0" />
-    </LineIds>
+    <Method Name="Meth" Id="{d6bac87f-ee1a-4924-bdf7-1aac2b686ad8}">
+      <Declaration><![CDATA[{attribute 'TcRpcEnable'}
+METHOD Meth : INT
+VAR_INPUT
+	Value : INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Meth := Value*2;]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>

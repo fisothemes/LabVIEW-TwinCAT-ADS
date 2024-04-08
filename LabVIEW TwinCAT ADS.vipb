@@ -1,10 +1,10 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2023-10-30 02:28:47" Creator="MzumaG01" Comments="" ID="fa433614fd0510e96fe5e3129cc13c4d">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2024-04-08 04:37:24" Creator="MzumaG01" Comments="" ID="511e951d78e5d747e4efb7e5e99dfa45">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.1.4.13</Library_Version>
+    <Library_Version>1.2.5.14</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
-    <Library_Output_Folder>builds\1.1.4.12</Library_Output_Folder>
+    <Library_Output_Folder>builds\1.2.5.13</Library_Output_Folder>
     <Company_Name>FisoThemes</Company_Name>
     <Library_Summary/>
     <Library_License>MIT</Library_License>
@@ -27,61 +27,62 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>LabVIEW TwinCAT ADS.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary>Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS</One_Line_Description_Summary>
-      <Description>Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard types, Pointers, References, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
+      <One_Line_Description_Summary>Unofficial LabVIEW TwinCAT Toolkit for communicating with Beckhoff PLCs via ADS</One_Line_Description_Summary>
+      <Description>Easy-to-use Unofficial LabVIEW TwinCAT Toolkit for communicating with Beckhoff PLCs via ADS. Features include invoking RPC methods, reading/writing PLC variables (including all standard types, pointers, references, time, strings, wide strings, structs composed of the aforementioned, nested structs, and multi-dimensional arrays of the aforementioned datatypes), introspective capabilities (retrieve symbol and type information), the ability to build your own low-level VIs via extensions, and more.
 
+&lt;b&gt;&lt;u&gt;Minimum Requirements:&lt;/u&gt;&lt;/b&gt;
+- LabVIEW 2018 (32/64-bit) or above
+- .NET Framework 4.6.2 (installed by default with LabVIEW)
+- TwinCAT 3.1.4024.10 XAE/XAR and above (haven't tested below 4024.10; might work with lower versions)
 
-Minimum Requirements
-=================
-+ LabVIEW 2018 (32/64 bit) or above
-+ .NET Framework 4.6.2 (installed by default with LabVIEW)
-+ TwinCAT 3.1.4024.10 and above (haven't tested below 4024.10 might work with lower versions)
+&lt;b&gt;&lt;u&gt;Important Notes:&lt;/u&gt;&lt;/b&gt;
 
-
-Important Notes
-============
-Connection
--------------
+&lt;b&gt;Connection&lt;/b&gt;
 1. You may notice that the `Connect.vi` is slow in connection. This is normal.
     The VI is simply caching the symbols and types in LabVIEW rather than keeping them in a .NET collection. The reason for this is that lookup times on the .NET Ads-XYZ-Collection are very slow. The further I moved away from making calls to any of Beckhoff's .NET libraries the faster operations became. The penalty for doing this is a slow connection.
 
 2. Because of the caching system, online changes are currently not supported.
 
-3. You do not need to disconnect before disposal. `Dispose.vi` VI will disconnect for you.
+3. You do not need to disconnect before disposal. The `Dispose.vi` VI will disconnect for you.
 
-Read, Write and Invoke Method
----------------------------------
-
+&lt;b&gt;Read, Write, and Invoke Method&lt;/b&gt;
 1. Operations involving `UNION`s and `INTERFACE`s types are not yet supported.
 
 2. To read and write to pointers simply add the dereferencing symbol to your symbol name e.g. `pValue^`.
 
-3. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow due to caching. Subsequent calls to  read/write/method invoking operations will be faster.
+3. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow due to caching. Subsequent calls to read/write/method-invoking operations will be faster.
 
-4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain.
+4. When sending numbers, arrays of numbers, or structs with numbers, enums, etc., the numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain.
 
-5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with defaults.
+5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need; the rest will be filled in with defaults.
 
-Events
--------
+&lt;b&gt;Events&lt;/b&gt;
+1. Online change is not supported. However, you can update variables on the PLC without needing to disconnect on the LabVIEW side via `Login with Download`, `Restart TwinCAT System`, and `Activate TwinCAT Configuration`. All symbols will automatically be reloaded into memory.
 
-1. Online change is not supported. However, you can update variables on the PLC without needing to disconnect on the LabVIEW side via `Login with Download`, `Restart TwinCAT System` and `Activate TwinCAT Configuration`. All symbols will automatically be reloaded into memory.
-
- &lt;i&gt;NOTE: Any reads or writes running during this process will produce errors, just ignore these errors until reconnection is complete. They will stop once that happens.&lt;/i&gt;
+ &lt;u&gt;&lt;i&gt;NOTE: Any reads or writes running during this process will produce errors; just ignore these errors until reconnection is complete. They will stop once that happens.&lt;/i&gt;&lt;/u&gt;
 
 2. Don't forget to close the Registration Refnum after you're done. User Events references are automatically closed on disposal.
 
-Other
-------
-1. When using extensions. Please only close the .NET references with an asterisk (*) on their label at the connector pane. The ones without an asterisk are managed for you.
+&lt;b&gt;Other&lt;/b&gt;
+1. When using extensions, please only close the .NET references with an asterisk (*) on their label at the connector pane. The ones without an asterisk are managed for you.
 
-Please feel free to contact me if you have questions, issues or suggestions.</Description>
+Please feel free to contact me if you have questions, issues, or suggestions.
+</Description>
       <Copyright/>
       <Packager>Goodwill Mzumala</Packager>
       <URL>https://github.com/fisothemes/LabVIEW-TwinCAT-ADS</URL>
-      <Release_Notes>Fixes:
---------
-+ Pointers symbols that didn't end with ^(dereference character) could not be read on v1.1.3.11. This is now fixed.
+      <Release_Notes>&lt;b&gt;&lt;u&gt;New Features:&lt;/u&gt;&lt;/b&gt;
+- Added `Read PLC Type.vi`
+- Added Alias names to Notifications. This means you can listen for changes to the same symbol at different rates.
+
+&lt;b&gt;&lt;u&gt;Improvements:&lt;/u&gt;&lt;/b&gt;
+- Speed of `Read Multiple.vi` and `Write Multiple.vi`
+
+&lt;b&gt;&lt;u&gt;Fixes:&lt;/u&gt;&lt;/b&gt;
+- Issue reading/writing values of symbols of pointer types that didn't end with ^(dereference character).
+- Issue reading/writing non-jagged arrays.
+- Issue where writing dates for DT type didn't take into account daylight savings.
+- Issue reading and writing `REFERENCE TO` types greater than 4 or 8 bytes (depending on the bitness of the machine).
 </Release_Notes>
     </Description>
     <Destinations>
@@ -162,20 +163,41 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Namespace/>
       </Namespace_Overrides>
       <Exclusions>
-        <Path>Tests-LV</Path>
+        <Path>PLC</Path>
       </Exclusions>
       <Exclusions>
         <Path>Test-PLC</Path>
       </Exclusions>
       <Exclusions>
-        <Path>Playground</Path>
+        <Path>Tests-LV</Path>
       </Exclusions>
       <Exclusions>
         <Path>Showcase</Path>
       </Exclusions>
       <Exclusions>
-        <Path>PLC</Path>
+        <Path>Playground</Path>
       </Exclusions>
+      <Exclusions>
+        <Path>TwinCAT ADS.lvproj</Path>
+      </Exclusions>
+      <Compile_Exclusions>
+        <Path>PLC</Path>
+      </Compile_Exclusions>
+      <Compile_Exclusions>
+        <Path>Test-PLC</Path>
+      </Compile_Exclusions>
+      <Compile_Exclusions>
+        <Path>Tests-LV</Path>
+      </Compile_Exclusions>
+      <Compile_Exclusions>
+        <Path>Showcase</Path>
+      </Compile_Exclusions>
+      <Compile_Exclusions>
+        <Path>Playground</Path>
+      </Compile_Exclusions>
+      <Compile_Exclusions>
+        <Path>TwinCAT ADS.lvproj</Path>
+      </Compile_Exclusions>
       <Place_Folder_Contents>
         <Path/>
       </Place_Folder_Contents>
@@ -618,7 +640,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E5E22B8B3D3458C7DDB073F4EB56D6A5</GUID>
+      <GUID>3DB6EC315A834E3850881701971870F6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -779,7 +801,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A86615C3AF834A6ADD9DD5A580062CC0</GUID>
+      <GUID>E4DEC7E6117276F89A5F4170DEA7814C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -814,7 +836,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>12D438AC658CCB299E68C6804834B0DD</GUID>
+      <GUID>941C2D6B8C1075FE3E1BD94814B2A9C8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1059,7 +1081,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Delete Notification By Handle.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>87765E44784D2687834055837D2BC3CD</GUID>
+      <GUID>B452164BC8F192A0048140EAC807AD2A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1290,7 +1312,21 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Status\Read Symbol Attribute.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6C1FABC9C4995D58C4CE16B899253BA0</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read PLC Type.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>src\TwinCAT ADS Class\VIs\Status\Read PLC Type.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>57FD87B8166A70010E2EB6FFB431808A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1409,7 +1445,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9F0BE374C36EADB41F843FD947812C6E</GUID>
+      <GUID>3D8361FC25366C611AF7668F57A5B503</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1570,7 +1606,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C1B91FAEE74BD60136B437CBE215B8ED</GUID>
+      <GUID>2519D4A19301A6529253D73285792B1F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1647,7 +1683,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>37572894376AF58FDB4AAA7ADFA317A8</GUID>
+      <GUID>F2CE3FC90F0972824F45903934A148F2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1766,7 +1802,7 @@ Please feel free to contact me if you have questions, issues or suggestions.</De
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Multiple Symbol Notifications.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>501A2BE9EE35680AC1D16A7B46EB3C97</GUID>
+      <GUID>95286F8E200C660FD7237FA7A779C473</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

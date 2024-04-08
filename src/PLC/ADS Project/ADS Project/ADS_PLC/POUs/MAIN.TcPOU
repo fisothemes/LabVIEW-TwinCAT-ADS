@@ -33,15 +33,5 @@ arstHTTP_Messages_Out[1].stHeader_Fields := arstHeader_Fields[1];
 arstHTTP_Messages_Out[2].stRequest_Line := arstRequest_Line[2];
 arstHTTP_Messages_Out[2].stHeader_Fields := arstHeader_Fields[2];]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="32" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

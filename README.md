@@ -2,39 +2,33 @@
 
 [![Image](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/badge.svg?metric=installs)](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/) [![Image](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/badge.svg?metric=stars)](https://www.vipm.io/package/fisothemes_lib_labview_twincat_ads/)
 
-Easy to use Unofficial LabVIEW TwinCAT API for communicating with Beckhoff PLCs via ADS. Features include Invoking Rpc Methods, Reading/Writing of PLC variables (including all Standard types, Pointers, References, Time, Strings, WStrings, Structs composed of the aforementioned, Nested STRUCTs and Multi-dimensional Arrays of the aforementioned datatypes), introspective capabilities (get the symbol and type information), the ability to build your own low-level VIs via Extensions and more. 
+Easy-to-use Unofficial LabVIEW TwinCAT Toolkit for communicating with Beckhoff PLCs via ADS. Features include invoking RPC methods, reading/writing PLC variables (including all standard types, pointers, references, time, strings, wide strings, structs composed of the aforementioned, nested structs, and multi-dimensional arrays of the aforementioned datatypes), introspective capabilities (retrieve symbol and type information), the ability to build your own low-level VIs via extensions, and more.
 
 
 # Minimum Requirements
 * LabVIEW 2018 (32/64 bit) and above
 * .NET Framework 4.6.2 (installed by default with LabVIEW)
-* TwinCAT 3.1.4024.10 and above (haven't tested below 4024.10 might work with lower versions)
+* TwinCAT 3.1.4024.10 XAE/XAR and above (haven't tested below 4024.10 might work with lower versions)
 
 
 # Changelog
 
 New Features:
 -------------
-+ Added VI for adding multiple symbol notifications.
-+ Added VI for deleting multiple symbol notifications.
-+ Added VI for clearing all symbol notifications.
-+ Added VI for getting the names and cycle times for all symbol notifications.
-+ Added extension VI for getting notification handle.
-+ Added extension VI for deleting notification handle.
-+ Added extension VI for getting symbol handle.
-+ Added extension VI for removing symbol handle.
-
-Fixes:
-------
-+ Fixed failure in application build due to Flatten .NET Symbol Information.vi.
-+ Fixed nested function blocks not being read properly.
-+ Fixed premature closure of cached .NET Symbol Information references by LabVIEW's garbage collector when calling the API's VIs in an Asynchronous VI.
-+ Fixed cases where characters after the null character in strings would show.
-+ Fixed case where you couldn't use the event registration refnum as a control, indicator or constant.
++ Added `Read PLC Type.vi`
++ Added Alias names to Notifications. This means you can listen for changes to the same symbol at different rates.
 
 Improvements:
 -------------
-+ Read.vim automatically changes to read multiple when connecting an array of symbol names.
++ Speed of `Read Multiple.vi` and `Write Multiple.vi`
+
+Fixes:
+------
++ Issue reading/writing values of symbols of pointer types that didn't end with ^(dereference character).
++ Issue reading/writing non-jagged arrays.
++ Issue where writing dates for DT type didn't take into account daylight savings.
++ Issue reading and writing `REFERENCE TO` types greater than 4 or 8 bytes (depending on the bitness of the machine).
+
 
 # Showcase
 VIs included in the API:
