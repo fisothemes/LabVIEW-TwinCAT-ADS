@@ -1,10 +1,10 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2024-04-08 04:37:24" Creator="MzumaG01" Comments="" ID="511e951d78e5d747e4efb7e5e99dfa45">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2024-11-18 01:58:34" Creator="MzumaG01" Comments="" ID="b2165a2bcec37eb2b0cdabc815a2b041">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.2.5.14</Library_Version>
+    <Library_Version>1.2.6.15</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
-    <Library_Output_Folder>builds\1.2.5.13</Library_Output_Folder>
+    <Library_Output_Folder>builds</Library_Output_Folder>
     <Company_Name>FisoThemes</Company_Name>
     <Library_Summary/>
     <Library_License>MIT</Library_License>
@@ -71,19 +71,9 @@ Please feel free to contact me if you have questions, issues, or suggestions.
       <Copyright/>
       <Packager>Goodwill Mzumala</Packager>
       <URL>https://github.com/fisothemes/LabVIEW-TwinCAT-ADS</URL>
-      <Release_Notes>&lt;b&gt;&lt;u&gt;New Features:&lt;/u&gt;&lt;/b&gt;
-- Added `Read PLC Type.vi`
-- Added Alias names to Notifications. This means you can listen for changes to the same symbol at different rates.
-
-&lt;b&gt;&lt;u&gt;Improvements:&lt;/u&gt;&lt;/b&gt;
-- Speed of `Read Multiple.vi` and `Write Multiple.vi`
-
-&lt;b&gt;&lt;u&gt;Fixes:&lt;/u&gt;&lt;/b&gt;
-- Issue reading/writing values of symbols of pointer types that didn't end with ^(dereference character).
-- Issue reading/writing non-jagged arrays.
-- Issue where writing dates for DT type didn't take into account daylight savings.
-- Issue reading and writing `REFERENCE TO` types greater than 4 or 8 bytes (depending on the bitness of the machine).
-</Release_Notes>
+      <Release_Notes>&lt;b&gt;&lt;u&gt;Fixes:&lt;/u&gt;&lt;/b&gt;
+- Failure to connect to free task ports (300-399) on the PLC.
+- Error in `Read Method Information.vi` on `TwinCAT 3.1.4024.6`.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -640,7 +630,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3DB6EC315A834E3850881701971870F6</GUID>
+      <GUID>0E31BF23A5AF1B5825BA72EF419CC3FD</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -801,7 +791,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E4DEC7E6117276F89A5F4170DEA7814C</GUID>
+      <GUID>37F49DD327CB57549A24F05BA101D4F1</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -836,7 +826,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>941C2D6B8C1075FE3E1BD94814B2A9C8</GUID>
+      <GUID>702EC0249379FAD28BA67BCF5D5358A9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1081,7 +1071,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Delete Notification By Handle.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B452164BC8F192A0048140EAC807AD2A</GUID>
+      <GUID>BBCA4ECC5A98B3C65E3A2BC3410A9C3C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1326,7 +1316,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Status\Read PLC Type.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>57FD87B8166A70010E2EB6FFB431808A</GUID>
+      <GUID>A0E692BE24CD4515C6A030FA7EB0D4C7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1445,7 +1435,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3D8361FC25366C611AF7668F57A5B503</GUID>
+      <GUID>2564FC630D840C27CEBFE9D63058F0DA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1606,7 +1596,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2519D4A19301A6529253D73285792B1F</GUID>
+      <GUID>C36F8408FFB0DBF0BF193FEA38E4A411</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1683,7 +1673,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F2CE3FC90F0972824F45903934A148F2</GUID>
+      <GUID>F819319C8DBAF21282940FF938444CE8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1802,7 +1792,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Multiple Symbol Notifications.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>95286F8E200C660FD7237FA7A779C473</GUID>
+      <GUID>3E29FE45A05A4CF2E889CB9D60C12F54</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

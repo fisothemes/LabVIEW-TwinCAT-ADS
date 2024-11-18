@@ -55,6 +55,9 @@
 				<Item Name="Test Read Enums.vi" Type="VI" URL="../Tests-LV/Test Read Enums.vi"/>
 				<Item Name="Test Write Enums.vi" Type="VI" URL="../Tests-LV/Test Write Enums.vi"/>
 			</Item>
+			<Item Name="Test Free Task" Type="Folder">
+				<Item Name="Test Free Task.vi" Type="VI" URL="../Tests-LV/Test Free Task.vi"/>
+			</Item>
 			<Item Name="Test Function Blocks" Type="Folder">
 				<Item Name="Test Read Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Read Function Blocks.vi"/>
 				<Item Name="Test Write Function Blocks.vi" Type="VI" URL="../Tests-LV/Test Write Function Blocks.vi"/>
