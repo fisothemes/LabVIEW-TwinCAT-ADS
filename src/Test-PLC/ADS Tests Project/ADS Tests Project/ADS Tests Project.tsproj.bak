@@ -11,7 +11,7 @@
 					<Name>PlcTask</Name>
 				</Task>
 				<Task Id="4" CreateSymbols="true" Priority="6" CycleTime="100000" AmsPort="301">
-					<Name>TestTask</Name>
+					<Name>FreeTask</Name>
 					<Vars VarGrpType="1" InsertType="1">
 						<Name>Inputs</Name>
 						<Var>

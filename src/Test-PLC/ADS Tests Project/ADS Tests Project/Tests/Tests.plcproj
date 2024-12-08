@@ -67,6 +67,9 @@
     <Compile Include="POUs\FBs\FB_Packed.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_Benchmark.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_Invoke.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -93,11 +93,5 @@ wsDirtyString := "Ahh!";
 refEnum REF= eEnum; // This is here because the compiler does not like initialising references to enums.
 ]]></ST>
     </Implementation>
-    <LineIds Name="P_Read">
-      <LineId Id="2" Count="0" />
-      <LineId Id="53" Count="0" />
-      <LineId Id="211" Count="0" />
-      <LineId Id="128" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

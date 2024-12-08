@@ -16,6 +16,9 @@
     <PouCall>
       <Name>P_Notifications</Name>
     </PouCall>
+    <PouCall>
+      <Name>P_Benchmark</Name>
+    </PouCall>
     <TaskFBGuid>{3b214028-5ba1-4e28-89e7-3dd0a22f7cf9}</TaskFBGuid>
     <Fb_init>{ba6c9e73-afa4-4db4-a1ca-3bce8b611b7d}</Fb_init>
     <Fb_exit>{c1445618-2027-463b-8833-2aeebf48b1e3}</Fb_exit>

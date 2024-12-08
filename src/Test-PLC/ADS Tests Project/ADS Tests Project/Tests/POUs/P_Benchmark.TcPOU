@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="P_Benchmark" Id="{a1ec2f07-e396-4469-9cea-1d9b02d2b956}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Benchmark
+VAR
+	stValue 		: ST_Simple;
+	stComplexValue	: ST_Complex;
+	fbValue			: FB_Simple(TRUE, 12, 'Simple function block.');
+	fbComplexValue 	: FB_Complex;
+	ardtValues		: ARRAY[0..999] OF DT			:= [1000(DT#2024-12-7-11:45:56)];
+	arfValues		: ARRAY[0..999] OF LREAL		:= [1000(3.14)];
+	arsValues		: ARRAY[0..999] OF WSTRING		:= [1000("Hello there!")];
+	arstValues		: ARRAY[0..999] OF ST_Simple 	:= [2((bMember := TRUE, dtMember := DT#2020-2-7-12:55:01, nMember := 448))];
+	arfbValues 		: ARRAY[0..999] OF FB_Simple[(TRUE, -87, 'Test simple array.')];
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
