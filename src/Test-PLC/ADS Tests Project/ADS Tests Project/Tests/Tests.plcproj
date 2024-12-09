@@ -58,6 +58,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FBs\FB_Invokable.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FBs\FB_Simple.TcPOU">
       <SubType>Code</SubType>
     </Compile>

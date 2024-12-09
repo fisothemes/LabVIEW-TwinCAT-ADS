@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_Invokable" Id="{74c5c950-f5d3-4656-9f37-c6756bb68b39}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Invokable
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Test" Id="{4467b56b-83a1-447a-943e-2b6363167747}">
+      <Declaration><![CDATA[{attribute 'TcRpcEnable'}
+METHOD Test : INT
+VAR_IN_OUT
+	Value :  INT;
+	Value2 : INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Test 	:= Value * 2;
+Value 	:= Test * 2;
+Value2 	:= Value * 2;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
