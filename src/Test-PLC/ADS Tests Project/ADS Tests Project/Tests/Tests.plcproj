@@ -55,6 +55,9 @@
     <Compile Include="DUTs\Struct\ST_Complex.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Struct\ST_STRUCT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>

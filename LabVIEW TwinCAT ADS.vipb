@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2024-11-18 01:58:34" Creator="MzumaG01" Comments="" ID="b2165a2bcec37eb2b0cdabc815a2b041">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-03-09 15:29:15" Modified_Date="2024-12-09 03:03:54" Creator="MzumaG01" Comments="" ID="0a789c0977a0ee3168b9d1eff4298dde">
   <Library_General_Settings>
     <Package_File_Name>FisoThemes_lib_LabVIEW_TwinCAT_ADS</Package_File_Name>
-    <Library_Version>1.2.6.15</Library_Version>
+    <Library_Version>1.3.7.16</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
     <Library_Output_Folder>builds</Library_Output_Folder>
@@ -71,9 +71,16 @@ Please feel free to contact me if you have questions, issues, or suggestions.
       <Copyright/>
       <Packager>Goodwill Mzumala</Packager>
       <URL>https://github.com/fisothemes/LabVIEW-TwinCAT-ADS</URL>
-      <Release_Notes>&lt;b&gt;&lt;u&gt;Fixes:&lt;/u&gt;&lt;/b&gt;
-- Failure to connect to free task ports (300-399) on the PLC.
-- Error in `Read Method Information.vi` on `TwinCAT 3.1.4024.6`.</Release_Notes>
+      <Release_Notes>
+&lt;b&gt;&lt;u&gt;New Features:&lt;/u&gt;&lt;/b&gt;
+- Added support for free tasks (ports 300-399) on the PLC.
+
+&lt;b&gt;&lt;u&gt;Improvements:&lt;/u&gt;&lt;/b&gt;
+- Significant improvements in read/write/invoke speeds for large structs and arrays.
+- Added support for invoking RPC methods with `VAR_IN_OUT` parameters.
+
+&lt;b&gt;&lt;u&gt;Fixes:&lt;/u&gt;&lt;/b&gt;
+- Error in `Read Method Information.vi` on `TwinCAT 3.1.4024.60`.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -630,7 +637,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Symbol Notification.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>0E31BF23A5AF1B5825BA72EF419CC3FD</GUID>
+      <GUID>D346FA1CA5CF975EA9C2D76A9FD68FD5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -791,7 +798,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Advanced\DATE-DT Byte Stream to Timestamp.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>37F49DD327CB57549A24F05BA101D4F1</GUID>
+      <GUID>2A76A1F03B2AAECA2DC2EE89C461E635</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -826,7 +833,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Configuration\Write ADS State.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>702EC0249379FAD28BA67BCF5D5358A9</GUID>
+      <GUID>5C99FF7BEA09024CC3FEAAB3F44EEFD7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1071,7 +1078,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Extensions\Delete Notification By Handle.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BBCA4ECC5A98B3C65E3A2BC3410A9C3C</GUID>
+      <GUID>1838A6A6B52B0451B5C8020833BE9DA3</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1316,7 +1323,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Status\Read PLC Type.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A0E692BE24CD4515C6A030FA7EB0D4C7</GUID>
+      <GUID>ACF46A250CD2D062C7B86A0D0FDB969B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1435,7 +1442,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Utilities\Decompose Variant.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2564FC630D840C27CEBFE9D63058F0DA</GUID>
+      <GUID>087E64E01365163F357B141FA8923E12</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1596,7 +1603,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\Examples\High Speed Reading.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C36F8408FFB0DBF0BF193FEA38E4A411</GUID>
+      <GUID>9057817D5BBDAC334E0E6449C2950D17</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1673,7 +1680,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Connection\Reconnect.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F819319C8DBAF21282940FF938444CE8</GUID>
+      <GUID>4F757BD2DF3B014284CBC8600ABCBDFA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1792,7 +1799,7 @@ Please feel free to contact me if you have questions, issues, or suggestions.
         <Path>src\TwinCAT ADS Class\VIs\Events\Add Multiple Symbol Notifications.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3E29FE45A05A4CF2E889CB9D60C12F54</GUID>
+      <GUID>648CBDFAEE23337A973C7A286077FAB4</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

@@ -15,19 +15,17 @@ Easy-to-use Unofficial LabVIEW TwinCAT Toolkit for communicating with Beckhoff P
 
 New Features:
 -------------
-+ Added `Read PLC Type.vi`
-+ Added Alias names to Notifications. This means you can listen for changes to the same symbol at different rates.
++ Added support for free tasks (ports 300-399) on the PLC.
+
 
 Improvements:
 -------------
-+ Speed of `Read Multiple.vi` and `Write Multiple.vi`
++ Significant improvements in read/write/invoke speeds for large structs and arrays.
++ Added support for invoking RPC methods with `VAR_IN_OUT` parameters.
 
 Fixes:
 ------
-+ Issue reading/writing values of symbols of pointer types that didn't end with ^(dereference character).
-+ Issue reading/writing non-jagged arrays.
-+ Issue where writing dates for DT type didn't take into account daylight savings.
-+ Issue reading and writing `REFERENCE TO` types greater than 4 or 8 bytes (depending on the bitness of the machine).
++ Error in `Read Method Information.vi` on `TwinCAT 3.1.4024.60`.
 
 
 # Showcase
@@ -106,8 +104,8 @@ Read, Write and Invoke Method
 
 3. First calls to an operation (Reading/Writing a symbol or Invoking a Method) will be slow.
 
-    Typical first call times for my RYZEN 3600X system with 1 isolated core are ~5ms for `ARRAY[0..999] OF LREAL` and ~40ms for `ARRAY[0..999] OF ST_STRUCT` where `ST_STRUCT` is:
-    ```pascal
+    Typical first call times for my RYZEN 3600X system with 1 isolated core are ~25ms for `ARRAY[0..999] OF LREAL` and ~30ms for `ARRAY[0..999] OF ST_STRUCT` where `ST_STRUCT` is:
+    ```js
     TYPE ST_STRUCT :
     STRUCT
         bVar  : BOOL;
@@ -116,11 +114,11 @@ Read, Write and Invoke Method
     END_STRUCT
     END_TYPE
     ```
-    Subsequent calls resulted in read/write/method invoking times of 1-2ms for `ARRAY[0..999] OF LREAL` and ~20ms for `ARRAY[0..999] OF ST_STRUCT`. The task cycle time was 1ms.
+    Subsequent calls resulted in read/write/method invoking times of 1-2ms for `ARRAY[0..999] OF LREAL` and ~5ms for `ARRAY[0..999] OF ST_STRUCT`. The task cycle time was 1ms.
 
 4. When sending numbers, arrays of numbers or structs with numbers, enums, etc. The numbers will be coerced to the type defined in the PLC for that variable/parameter. This is by design. LabVIEW is a graphical language so switching between Single Precision Float and Doubles is an absolute pain.
 
-5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with defaults.
+5. LabVIEW Arrays don't need to be the same size as the PLC arrays to write them. Write what you need, the rest will be filled in with the 0 byte equivalent.
 
 
 Events

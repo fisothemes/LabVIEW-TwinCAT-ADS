@@ -10,6 +10,7 @@ VAR
 	ardtValues		: ARRAY[0..999] OF DT			:= [1000(DT#2024-12-7-11:45:56)];
 	arfValues		: ARRAY[0..999] OF LREAL		:= [1000(3.14)];
 	arsValues		: ARRAY[0..999] OF WSTRING		:= [1000("Hello there!")];
+	arstStruct		: ARRAY[0..999] OF ST_STRUCT	:= [1000((bVar := TRUE, dtVar := DT#2020-2-7-12:55:01, fVar := 3.14))];
 	arstValues		: ARRAY[0..999] OF ST_Simple 	:= [2((bMember := TRUE, dtMember := DT#2020-2-7-12:55:01, nMember := 448))];
 	arfbValues 		: ARRAY[0..999] OF FB_Simple[(TRUE, -87, 'Test simple array.')];
 END_VAR
