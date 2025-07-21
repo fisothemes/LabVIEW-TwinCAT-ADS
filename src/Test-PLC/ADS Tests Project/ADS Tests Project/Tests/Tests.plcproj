@@ -58,6 +58,9 @@
     <Compile Include="DUTs\Struct\ST_STRUCT.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Unions\U_Simple.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +96,7 @@
     <Folder Include="DUTs" />
     <Folder Include="DUTs\Alias" />
     <Folder Include="DUTs\Enums" />
+    <Folder Include="DUTs\Unions" />
     <Folder Include="DUTs\Struct" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\FBs" />

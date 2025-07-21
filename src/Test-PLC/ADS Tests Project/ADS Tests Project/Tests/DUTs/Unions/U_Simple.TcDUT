@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="U_Simple" Id="{a50af2f4-50ec-4519-81e9-5e8da6a1620c}">
+    <Declaration><![CDATA[TYPE U_Simple :
+UNION
+	bMember  		: BOOL;
+    dtMember 		: DT;
+	nMember   		: DINT;
+END_UNION
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -41,6 +41,8 @@ VAR
 	                                        	
 	eEnum 			: E_Enum 					:= E_Enum.Member1;
 	t_Enum 			: T_Enum					:= E_Enum.Member1;
+	
+	uSimple			: U_Simple					:= (nMember := 42);
 	                                        	
 	stSimple 		: ST_Simple 				:= (bMember := TRUE, dtMember := DT#2020-2-7-12:55:01, nMember := 448);
 	stPacked 		: ST_Packed 				:= (bMember := TRUE, dtMember := DT#2023-3-10-15:30:01, fMember := 1.444);
